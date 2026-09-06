@@ -99,11 +99,14 @@
     0%,100%{transform:translateY(0);}
     50%{transform:translateY(-14px);}
   }
-  .skill-badges{position:absolute; inset:0; z-index:1;}
+  .skill-badges{
+    position:absolute; inset:0; z-index:1;
+    pointer-events:none;
+  }
   .skill-badges img{
     position:absolute; height:26px; opacity:0.85;
     filter:drop-shadow(0 0 6px rgba(233,217,138,0.35));
-    will-change:transform;
+    /* REMOVED will-change:transform - no animation needed */
   }
   .treeline{
     position:absolute; left:0; right:0; bottom:0; height:120px; z-index:1;
@@ -118,7 +121,18 @@
     font-size:0.85rem; color:#E9D98A; font-weight:600;
     margin-bottom:10px;
   }
-  .hero h1{font-size:2.6rem; line-height:1.12; letter-spacing:-0.02em; color:#F4F7FA;}
+  .hero h1{
+    font-size:2.6rem; line-height:1.12; letter-spacing:-0.02em; color:#F4F7FA;
+  }
+  /* NEW: Sub-heading style */
+  .hero h1 span.sub-heading{
+    display:block;
+    font-size:1.2rem;
+    font-weight:400;
+    color:#C7D3DE;
+    letter-spacing:-0.01em;
+    margin-top:6px;
+  }
   .hero-sub{margin-top:14px; font-size:1.08rem; color:#C7D3DE; max-width:52ch;}
   .hero-actions{margin-top:26px; display:flex; gap:14px; flex-wrap:wrap;}
   .photo-frame{
@@ -239,7 +253,7 @@
 <header class="hero">
   <div class="stars" id="starField"></div>
   <div class="fireflies" id="fireflyField"></div>
-  <div class="skill-badges" id="skillBadges">
+  <div class="skill-badges">
     <img src="https://img.shields.io/badge/Data%20Analyst-0A66C2?style=for-the-badge&logo=databricks&logoColor=white" style="top:8%; left:52%;" alt="Data Analyst">
     <img src="https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white" style="top:38%; left:90%;" alt="Excel">
     <img src="https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" style="top:62%; left:80%;" alt="Power BI">
@@ -253,8 +267,11 @@
     </div>
     <div class="hero-main">
       <div class="kicker">AVAILABLE FOR OPPORTUNITIES</div>
-      <h1>Jeisa Mathew</h1>
-      <p class="hero-sub">Aspiring Data Analyst based in Mangalore, India. I like turning raw numbers into clear tables and decisions — comfortable in SQL, Python and Power BI, currently deepening my skills in Gen AI–powered data science.</p>
+      <h1>
+        Hi, I am Jeisa Mathew
+        <span class="sub-heading">Aspiring Data Analyst based in Mangalore, India.</span>
+      </h1>
+      <p class="hero-sub">I like turning raw numbers into clear tables and decisions — comfortable in SQL, Python and Power BI, currently deepening my skills in Gen AI–powered data science.</p>
       <div class="hero-actions">
         <a class="btn btn-solid" href="Resume.pdf" target="_blank">Download Resume</a>
         <a class="btn btn-outline" href="https://github.com/JEISAMATHEW" target="_blank">GitHub</a>
@@ -429,20 +446,6 @@
     a.addEventListener('click', function(){ menu.classList.remove('open'); });
   });
   
-  var badgeEls = document.querySelectorAll('.skill-badges img');
-  var speeds = [0.18, -0.24, 0.30, -0.20, 0.26];
-
-  window.addEventListener('scroll', function(){
-    var y = window.scrollY;
-
-    badgeEls.forEach(function(img, i){
-      var move = y * speeds[i % speeds.length];
-      move = Math.max(-120, Math.min(120, move));
-
-      img.style.transform =
-        'translate3d(0, ' + move + 'px, 0)';
-    });
-  }, {passive:true});
   
 </script>
 
