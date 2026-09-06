@@ -116,13 +116,6 @@
   .hero-sub{margin-top:14px; font-size:1.08rem; color:#C7D3DE; max-width:52ch;}
   .hero-actions{margin-top:26px; display:flex; gap:14px; flex-wrap:wrap;}
   .photo-frame{
-    flex:0 0 150px; width:150px; height:190px;
-    border:2px solid #E9D98A;
-    box-shadow:0 0 0 5px rgba(233,217,138,0.12), 0 12px 30px rgba(0,0,0,0.45);
-    border-radius:4px; overflow:hidden;
-    background:#0B1B2B;
-  }
-  .photo-frame{
     flex:0 0 170px; width:170px; height:170px;
     border-radius:50%;
     border:3px solid #E9D98A;
@@ -130,7 +123,12 @@
     overflow:hidden;
     background:#0B1B2B;
   }
-  .photo-frame img{width:100%; height:100%; object-fit:cover; display:block;}  
+  .photo-frame img{width:100%; height:100%; object-fit:cover; display:block;}
+  .btn{
+    display:inline-block; padding:11px 22px; border-radius:2px;
+    text-decoration:none; font-weight:600; font-size:0.92rem;
+    border:1px solid var(--ink);
+  }
   .btn-solid{background:var(--ink); color:var(--white);}
   .btn-solid:hover{background:var(--amber); border-color:var(--amber); color:var(--ink);}
   .btn-outline{border-color:var(--line); color:var(--ink);}
@@ -141,19 +139,19 @@
   .hero .btn-outline:hover{border-color:#E9D98A; color:#E9D98A;}
 
   .stat-card{
-    flex:0 0 240px;
+    flex:0 0 280px;
     border:1px solid rgba(233,217,138,0.35);
     background:rgba(255,255,255,0.06);
     backdrop-filter:blur(2px);
   }
   .stat-row{
-    display:flex; justify-content:space-between;
-    padding:12px 18px; border-bottom:1px solid rgba(233,217,138,0.2);
+    display:flex; flex-direction:column; gap:4px;
+    padding:14px 18px; border-bottom:1px solid rgba(233,217,138,0.2);
     font-size:0.88rem;
   }
   .stat-row:last-child{border-bottom:none;}
-  .stat-row .k{color:#B7C3CE;}
-  .stat-row .v{font-weight:600; color:#F4F7FA;}
+  .stat-row .k{color:#B7C3CE; font-size:0.78rem;}
+  .stat-row .v{font-weight:600; color:#F4F7FA; line-height:1.4;}
 
   section{padding:56px 0; border-top:1px solid var(--line);}
   .section-head{display:flex; align-items:baseline; gap:14px; margin-bottom:30px;}
@@ -245,10 +243,10 @@
       </div>
     </div>
     <div class="stat-card">
-      <div class="stat-row"><span class="k">Degree </span><span class="v"> B.E. CSE</span></div>
-      <div class="stat-row"><span class="k">Core tools </span><span class="v"> SQL + Python</span></div>
-      <div class="stat-row"><span class="k">BI tools </span><span class="v"> Power BI + Tableau</span></div>
-      <div class="stat-row"><span class="k">Currently </span><span class="v"> Gen AI + Data Science + Machine Learning + Add on Certification from IIIT -B </span></div>
+      <div class="stat-row"><span class="k">Degree</span><span class="v">B.E. CSE</span></div>
+      <div class="stat-row"><span class="k">Core tools</span><span class="v">SQL + Python</span></div>
+      <div class="stat-row"><span class="k">BI tools</span><span class="v">Power BI + Tableau</span></div>
+      <div class="stat-row"><span class="k">Currently</span><span class="v">Gen AI + Data Science + Machine Learning, Add-on Certification from IIIT-B</span></div>
     </div>
   </div>
 </header>
