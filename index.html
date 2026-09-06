@@ -36,7 +36,6 @@
   a{color:var(--ink);}
   .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
 
-  /* ---- nav ---- */
   nav{
     position:sticky; top:0; z-index:10;
     background:rgba(250,250,247,0.92);
@@ -55,6 +54,9 @@
   .nav-toggle{display:none; background:none; border:none; font-size:1.5rem; cursor:pointer; color:var(--ink);}
 
   @media (max-width:640px){
+    .hero-row{justify-content:center; text-align:center;}
+    .hero-sub{margin-left:auto; margin-right:auto;}
+    .hero-actions{justify-content:center;}
     nav ul{
       position:absolute; top:100%; left:0; right:0;
       background:var(--paper); flex-direction:column; gap:0;
@@ -67,18 +69,60 @@
     .nav-toggle{display:block;}
   }
 
-  /* ---- hero ---- */
-  header.hero{padding:64px 0 40px;}
-  .hero-row{display:flex; gap:40px; flex-wrap:wrap; align-items:flex-start;}
+  header.hero{
+    padding:72px 0 96px;
+    position:relative;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 82% 18%, rgba(255,247,214,0.9) 0%, rgba(255,247,214,0.5) 3%, rgba(255,236,170,0.12) 7%, transparent 10%),
+      linear-gradient(180deg, #0B1B2B 0%, #12283D 45%, #1B3A52 78%, #234A63 100%);
+    color:#F4F7FA;
+  }
+  header.hero .wrap{position:relative; z-index:2;}
+  .stars{position:absolute; inset:0; z-index:1;}
+  .stars span{
+    position:absolute; width:2px; height:2px; background:#fff; border-radius:50%;
+    opacity:.75; animation:twinkle 3.2s ease-in-out infinite;
+  }
+  .stars span.big{width:3px; height:3px;}
+  @keyframes twinkle{
+    0%,100%{opacity:.25;}
+    50%{opacity:1;}
+  }
+  .fireflies{position:absolute; inset:0; z-index:1;}
+  .fireflies span{
+    position:absolute; width:6px; height:6px; border-radius:50%;
+    background:#E9D98A; box-shadow:0 0 8px 3px rgba(233,217,138,0.7);
+    animation:drift 6s ease-in-out infinite;
+  }
+  @keyframes drift{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-14px);}
+  }
+  .treeline{
+    position:absolute; left:0; right:0; bottom:0; height:120px; z-index:1;
+    background:#08131E;
+    clip-path:polygon(0% 100%,0% 55%,4% 60%,8% 40%,12% 58%,17% 45%,22% 62%,28% 48%,33% 65%,39% 50%,45% 63%,52% 44%,58% 60%,64% 46%,70% 63%,76% 50%,82% 62%,88% 47%,93% 60%,97% 52%,100% 60%,100% 100%);
+    opacity:0.85;
+  }
+  .hero-row{display:flex; gap:40px; flex-wrap:wrap; align-items:center;}
   .hero-main{flex:1 1 380px;}
   .kicker{
     font-family:'Space Grotesk',sans-serif;
-    font-size:0.85rem; color:var(--amber); font-weight:600;
+    font-size:0.85rem; color:#E9D98A; font-weight:600;
     margin-bottom:10px;
   }
-  .hero h1{font-size:2.6rem; line-height:1.12; letter-spacing:-0.02em;}
-  .hero-sub{margin-top:14px; font-size:1.08rem; color:var(--ink-soft); max-width:52ch;}
+  .hero h1{font-size:2.6rem; line-height:1.12; letter-spacing:-0.02em; color:#F4F7FA;}
+  .hero-sub{margin-top:14px; font-size:1.08rem; color:#C7D3DE; max-width:52ch;}
   .hero-actions{margin-top:26px; display:flex; gap:14px; flex-wrap:wrap;}
+  .photo-frame{
+    flex:0 0 150px; width:150px; height:190px;
+    border:2px solid #E9D98A;
+    box-shadow:0 0 0 5px rgba(233,217,138,0.12), 0 12px 30px rgba(0,0,0,0.45);
+    border-radius:4px; overflow:hidden;
+    background:#0B1B2B;
+  }
+  .photo-frame img{width:100%; height:100%; object-fit:cover; display:block;}
   .btn{
     display:inline-block; padding:11px 22px; border-radius:2px;
     text-decoration:none; font-weight:600; font-size:0.92rem;
@@ -88,32 +132,33 @@
   .btn-solid:hover{background:var(--amber); border-color:var(--amber); color:var(--ink);}
   .btn-outline{border-color:var(--line); color:var(--ink);}
   .btn-outline:hover{border-color:var(--ink);}
+  .hero .btn-solid{background:#E9D98A; color:#0B1B2B; border-color:#E9D98A;}
+  .hero .btn-solid:hover{background:#F4E9B8;}
+  .hero .btn-outline{border-color:rgba(244,247,250,0.4); color:#F4F7FA;}
+  .hero .btn-outline:hover{border-color:#E9D98A; color:#E9D98A;}
 
-  /* mini data card */
   .stat-card{
     flex:0 0 240px;
-    border:1px solid var(--line);
-    background:var(--white);
+    border:1px solid rgba(233,217,138,0.35);
+    background:rgba(255,255,255,0.06);
+    backdrop-filter:blur(2px);
   }
   .stat-row{
     display:flex; justify-content:space-between;
-    padding:12px 18px; border-bottom:1px solid var(--line);
+    padding:12px 18px; border-bottom:1px solid rgba(233,217,138,0.2);
     font-size:0.88rem;
   }
   .stat-row:last-child{border-bottom:none;}
-  .stat-row .k{color:var(--ink-soft);}
-  .stat-row .v{font-weight:600;}
+  .stat-row .k{color:#B7C3CE;}
+  .stat-row .v{font-weight:600; color:#F4F7FA;}
 
-  /* ---- section shell ---- */
   section{padding:56px 0; border-top:1px solid var(--line);}
   .section-head{display:flex; align-items:baseline; gap:14px; margin-bottom:30px;}
   .section-num{font-family:'Space Grotesk',sans-serif; color:var(--amber); font-weight:600; font-size:0.9rem;}
   .section-head h2{font-size:1.5rem; letter-spacing:-0.01em;}
 
-  /* ---- about ---- */
   .about-text{max-width:62ch; color:var(--ink-soft); font-size:1.02rem;}
 
-  /* ---- skills as table ---- */
   table.skills{width:100%; border-collapse:collapse;}
   table.skills td{
     padding:13px 4px; border-bottom:1px solid var(--line);
@@ -122,14 +167,12 @@
   table.skills td.cat{width:38%; color:var(--ink-soft); font-weight:500;}
   table.skills td.val{font-weight:500;}
 
-  /* ---- experience ---- */
   .job{display:flex; gap:24px; padding:18px 0; border-bottom:1px solid var(--line);}
   .job:last-child{border-bottom:none;}
   .job-when{flex:0 0 150px; color:var(--amber); font-family:'Space Grotesk',sans-serif; font-size:0.86rem; font-weight:600;}
   .job-role{font-weight:600;}
   .job-org{color:var(--ink-soft); font-size:0.92rem;}
 
-  /* ---- projects ---- */
   .note{
     background:var(--amber-soft); border:1px solid #EFD9A8;
     padding:12px 16px; font-size:0.88rem; color:#7A5A0A;
@@ -138,19 +181,17 @@
   .proj-grid{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line);}
   @media (max-width:640px){.proj-grid{grid-template-columns:1fr;}}
   .proj{background:var(--white); padding:22px;}
-  .proj-tag{font-size:0.75rem; color:var(--amber); font-weight:600; font-family:'Space Grotesk',sans-serif; text-transform:none;}
+  .proj-tag{font-size:0.75rem; color:var(--amber); font-weight:600; font-family:'Space Grotesk',sans-serif;}
   .proj h3{font-size:1.05rem; margin-top:8px;}
   .proj p{color:var(--ink-soft); font-size:0.92rem; margin-top:8px;}
   .proj .stack{margin-top:12px; font-size:0.8rem; color:var(--ink-soft);}
 
-  /* ---- education ---- */
   .edu{display:flex; justify-content:space-between; gap:20px; padding:14px 0; border-bottom:1px solid var(--line);}
   .edu:last-child{border-bottom:none;}
   .edu-left .school{font-weight:600;}
   .edu-left .prog{color:var(--ink-soft); font-size:0.92rem;}
   .edu-right{white-space:nowrap; color:var(--ink-soft); font-size:0.9rem; text-align:right;}
 
-  /* ---- contact ---- */
   .contact-list{display:flex; flex-direction:column; gap:0; border:1px solid var(--line);}
   .contact-list a{
     display:flex; justify-content:space-between; align-items:center;
@@ -183,13 +224,19 @@
 </nav>
 
 <header class="hero">
+  <div class="stars" id="starField"></div>
+  <div class="fireflies" id="fireflyField"></div>
+  <div class="treeline"></div>
   <div class="wrap hero-row">
+    <div class="photo-frame">
+      <img src="photo.jpg" alt="Jeisa Mathew">
+    </div>
     <div class="hero-main">
       <div class="kicker">AVAILABLE FOR OPPORTUNITIES</div>
       <h1>Jeisa Mathew</h1>
       <p class="hero-sub">Aspiring Data Analyst based in Hubballi, India. I like turning raw numbers into clear tables and decisions — comfortable in SQL, Python and Power BI, currently deepening my skills in Gen AI–powered data science.</p>
       <div class="hero-actions">
-        <a class="btn btn-solid" href="Jeisa_Mathew_Resume.pdf" target="_blank">Download Resume</a>
+        <a class="btn btn-solid" href="Resume.pdf" target="_blank">Download Resume</a>
         <a class="btn btn-outline" href="https://github.com/JEISAMATHEW" target="_blank">GitHub</a>
         <a class="btn btn-outline" href="https://www.linkedin.com/in/jeisamathew/" target="_blank">LinkedIn</a>
       </div>
@@ -226,7 +273,6 @@
 <section id="experience">
   <div class="wrap">
     <div class="section-head"><span class="section-num">03</span><h2>Experience</h2></div>
-
     <div class="job">
       <div class="job-when">May – Jul 2026</div>
       <div>
@@ -234,7 +280,6 @@
         <div class="job-org">Tech Mahindra</div>
       </div>
     </div>
-
     <div class="job">
       <div class="job-when">Mar – Aug 2025</div>
       <div>
@@ -242,7 +287,6 @@
         <div class="job-org">Infosys Limited</div>
       </div>
     </div>
-
     <div class="job">
       <div class="job-when">4-week internship</div>
       <div>
@@ -289,7 +333,6 @@
 <section id="education">
   <div class="wrap">
     <div class="section-head"><span class="section-num">05</span><h2>Education</h2></div>
-
     <div class="edu">
       <div class="edu-left">
         <div class="school">Jain College of Engineering and Technology, Hubballi</div>
@@ -297,7 +340,6 @@
       </div>
       <div class="edu-right">2018–2022<br>7.37 CGPA</div>
     </div>
-
     <div class="edu">
       <div class="edu-left">
         <div class="school">Prerana PU College, Hubballi</div>
@@ -305,7 +347,6 @@
       </div>
       <div class="edu-right">2016–2018<br>83.33%</div>
     </div>
-
     <div class="edu">
       <div class="edu-left">
         <div class="school">Kendriya Vidyalaya No. 2, Hubballi</div>
@@ -323,7 +364,7 @@
       <a href="mailto:jeisausn2jh18cs025@gmail.com"><span class="label">Email</span><span class="arrow">jeisausn2jh18cs025@gmail.com</span></a>
       <a href="https://www.linkedin.com/in/jeisamathew/" target="_blank"><span class="label">LinkedIn</span><span class="arrow">in/jeisamathew</span></a>
       <a href="https://github.com/JEISAMATHEW" target="_blank"><span class="label">GitHub</span><span class="arrow">JEISAMATHEW</span></a>
-      <a href="Jeisa_Mathew_Resume.pdf" target="_blank"><span class="label">Resume</span><span class="arrow">Download PDF</span></a>
+      <a href="Resume.pdf" target="_blank"><span class="label">Resume</span><span class="arrow">Download PDF</span></a>
     </div>
   </div>
 </section>
@@ -334,6 +375,27 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  var starField = document.getElementById('starField');
+  for(var i=0;i<60;i++){
+    var s = document.createElement('span');
+    if(Math.random() > 0.85) s.className = 'big';
+    s.style.left = Math.random()*100 + '%';
+    s.style.top = Math.random()*70 + '%';
+    s.style.animationDelay = (Math.random()*3) + 's';
+    starField.appendChild(s);
+  }
+
+  var fireflyField = document.getElementById('fireflyField');
+  for(var j=0;j<10;j++){
+    var f = document.createElement('span');
+    f.style.left = Math.random()*100 + '%';
+    f.style.top = (55 + Math.random()*35) + '%';
+    f.style.animationDelay = (Math.random()*4) + 's';
+    f.style.animationDuration = (4 + Math.random()*3) + 's';
+    fireflyField.appendChild(f);
+  }
+
   var toggle = document.getElementById('navToggle');
   var menu = document.getElementById('navMenu');
   toggle.addEventListener('click', function(){ menu.classList.toggle('open'); });
