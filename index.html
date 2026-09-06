@@ -99,6 +99,12 @@
     0%,100%{transform:translateY(0);}
     50%{transform:translateY(-14px);}
   }
+  .skill-badges{position:absolute; inset:0; z-index:1;}
+  .skill-badges img{
+    position:absolute; height:26px; opacity:0.85;
+    filter:drop-shadow(0 0 6px rgba(233,217,138,0.35));
+    will-change:transform;
+  }
   .treeline{
     position:absolute; left:0; right:0; bottom:0; height:120px; z-index:1;
     background:#08131E;
@@ -233,6 +239,13 @@
 <header class="hero">
   <div class="stars" id="starField"></div>
   <div class="fireflies" id="fireflyField"></div>
+  <div class="skill-badges" id="skillBadges">
+    <img src="https://img.shields.io/badge/Data%20Analyst-0A66C2?style=for-the-badge&logo=databricks&logoColor=white" style="top:8%; left:52%;" alt="Data Analyst">
+    <img src="https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white" style="top:38%; left:90%;" alt="Excel">
+    <img src="https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" style="top:62%; left:80%;" alt="Power BI">
+    <img src="https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white" style="top:78%; left:55%;" alt="Tableau">
+    <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" style="top:20%; left:8%;" alt="MySQL">
+  </div>
   <div class="treeline"></div>
   <div class="wrap hero-row">
     <div class="photo-frame">
@@ -415,6 +428,17 @@
   menu.querySelectorAll('a').forEach(function(a){
     a.addEventListener('click', function(){ menu.classList.remove('open'); });
   });
+  
+  var badgeEls = document.querySelectorAll('.skill-badges img');
+  var speeds = [0.4, -0.3, 0.5, -0.45, 0.35];
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY;
+    badgeEls.forEach(function(img, i){
+      var deg = y * speeds[i % speeds.length];
+      img.style.transform = 'rotate(' + deg + 'deg)';
+    });
+  }, {passive:true});
+  
 </script>
 
 </body>
