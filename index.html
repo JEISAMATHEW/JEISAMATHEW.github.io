@@ -430,12 +430,28 @@
   });
   
   var badgeEls = document.querySelectorAll('.skill-badges img');
-  var speeds = [0.4, -0.3, 0.5, -0.45, 0.35];
+  var initialPositions = [];
+  badgeEls.forEach(function(img) {
+    var style = img.style;
+    var top = parseFloat(style.top) || 0;
+    var left = parseFloat(style.left) || 0;
+    initialPositions.push({ top: top, left: left });
+  });
+  
   window.addEventListener('scroll', function(){
     var y = window.scrollY;
+    var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    var scrollPercent = y / maxScroll;
+    var speeds = [0.3, -0.4, 0.5, -0.35, 0.45];
+    var maxMove = 120;
     badgeEls.forEach(function(img, i){
-      var deg = y * speeds[i % speeds.length];
-      img.style.transform = 'rotate(' + deg + 'deg)';
+      var move = (scrollPercent - 0.5) * maxMove * speeds[i % speeds.length];
+      var baseTop = initialPositions[i].top;
+      var baseLeft = initialPositions[i].left;
+      img.style.top = (baseTop + move) + '%';
+      img.style.left = baseLeft + '%';
+      var rotate = y * 0.02 * speeds[i % speeds.length];
+      img.style.transform = 'rotate(' + rotate + 'deg)';
     });
   }, {passive:true});
   
