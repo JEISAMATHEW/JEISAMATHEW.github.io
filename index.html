@@ -31,6 +31,13 @@
   }
   .page-stars span.big{width:3px; height:3px;}
 
+  .page-fireflies{position:fixed; inset:0; z-index:-1; pointer-events:none;}
+  .page-fireflies span{
+    position:absolute; width:6px; height:6px; border-radius:50%;
+    background:#E9D98A; box-shadow:0 0 8px 3px rgba(233,217,138,0.7);
+    animation:drift 6s ease-in-out infinite;
+  }
+
   body{background:transparent;}
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -260,6 +267,7 @@
 </head>
 <body>
 <div class="page-stars" id="pageStars"></div>
+<div class="page-fireflies" id="pageFireflies"></div>
 
 <nav>
   <div class="wrap">
@@ -467,6 +475,16 @@
     ps.style.top = Math.random()*100 + '%';
     ps.style.animationDelay = (Math.random()*3) + 's';
     pageStars.appendChild(ps);
+  }
+
+  var pageFireflies = document.getElementById('pageFireflies');
+  for(var m=0;m<14;m++){
+    var pf = document.createElement('span');
+    pf.style.left = Math.random()*100 + '%';
+    pf.style.top = Math.random()*100 + '%';
+    pf.style.animationDelay = (Math.random()*4) + 's';
+    pf.style.animationDuration = (4 + Math.random()*3) + 's';
+    pageFireflies.appendChild(pf);
   }
 
   var starField = document.getElementById('starField');
