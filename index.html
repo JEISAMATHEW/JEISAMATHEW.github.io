@@ -9,16 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#FAFAF7;
-    --ink:#1B2A4A;
-    --ink-soft:#4A5773;
-    --line:#D8DCE3;
-    --amber:#D98E04;
-    --amber-soft:#FCEFD6;
-    --white:#FFFFFF;
-    --max:860px;
-  }
-  [data-theme="dark"]{
     --paper:#12141B;
     --ink:#ECEEF3;
     --ink-soft:#9AA3B2;
@@ -26,34 +16,34 @@
     --amber:#E9B94D;
     --amber-soft:#2A2410;
     --white:#191C24;
+    --max:860px;
   }
-  body{ transition:background-color .25s ease, color .25s ease; position:relative; }
+  body{ position:relative; }
 
   .page-stars{
     position:fixed; inset:0; z-index:-2;
     background:linear-gradient(180deg, #0B1B2B 0%, #12283D 45%, #1B3A52 78%, #234A63 100%);
-    opacity:0; transition:opacity .4s ease; pointer-events:none;
+    pointer-events:none;
   }
-  [data-theme="dark"] .page-stars{opacity:1;}
   .page-stars span{
     position:absolute; width:2px; height:2px; background:#fff; border-radius:50%;
     opacity:.7; animation:twinkle 3.2s ease-in-out infinite;
   }
   .page-stars span.big{width:3px; height:3px;}
 
-  [data-theme="dark"] body{background:transparent;}
-  [data-theme="dark"] nav{background:rgba(18,20,27,0.75); border-color:rgba(255,255,255,0.1);}
-  [data-theme="dark"] section{border-color:rgba(255,255,255,0.1);}
-  [data-theme="dark"] .proj-grid{background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.1);}
-  [data-theme="dark"] .proj{background:rgba(20,24,34,0.72); backdrop-filter:blur(2px);}
-  [data-theme="dark"] table.skills td{border-color:rgba(255,255,255,0.1);}
-  [data-theme="dark"] .job{border-color:rgba(255,255,255,0.1);}
-  [data-theme="dark"] .edu{border-color:rgba(255,255,255,0.1);}
-  [data-theme="dark"] .note{background:rgba(233,217,138,0.12); border-color:rgba(233,217,138,0.35); color:#F4E9B8;}
-  [data-theme="dark"] .contact-list{border-color:rgba(255,255,255,0.1);}
-  [data-theme="dark"] .contact-list a{background:rgba(20,24,34,0.72); border-color:rgba(255,255,255,0.1);}
-  [data-theme="dark"] .contact-list a:hover{background:rgba(233,217,138,0.12);}
-  [data-theme="dark"] .stat-card{background:rgba(255,255,255,0.06);}
+  body{background:transparent;}
+  nav{background:rgba(18,20,27,0.75); border-color:rgba(255,255,255,0.1);}
+  section{border-color:rgba(255,255,255,0.1);}
+  .proj-grid{background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.1);}
+  .proj{background:rgba(20,24,34,0.72); backdrop-filter:blur(2px);}
+  table.skills td{border-color:rgba(255,255,255,0.1);}
+  .job{border-color:rgba(255,255,255,0.1);}
+  .edu{border-color:rgba(255,255,255,0.1);}
+  .note{background:rgba(233,217,138,0.12); border-color:rgba(233,217,138,0.35); color:#F4E9B8;}
+  .contact-list{border-color:rgba(255,255,255,0.1);}
+  .contact-list a{background:rgba(20,24,34,0.72); border-color:rgba(255,255,255,0.1);}
+  .contact-list a:hover{background:rgba(233,217,138,0.12);}
+  .stat-card{background:rgba(255,255,255,0.06);}
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
@@ -85,26 +75,9 @@
   nav .brand{font-weight:700; font-size:1.05rem; letter-spacing:-0.01em;}
   nav .brand span{color:var(--amber);}
   nav ul{list-style:none; display:flex; gap:26px; margin:0; padding:0;}
-  nav a{text-decoration:none; font-size:0.92rem; color:var(--ink-soft); font-weight:500;}
+  nav a{text-decoration:none; font-size:0.92rem; color:#C7D3DE; font-weight:500;}
   nav a:hover{color:var(--amber);}
-  [data-theme="dark"] nav a{color:#C7D3DE;}
   .nav-toggle{display:none; background:none; border:none; font-size:1.5rem; cursor:pointer; color:var(--ink);}
-
-  .theme-toggle{
-    display:inline-flex; align-items:center; justify-content:center;
-    width:36px; height:36px; margin-left:18px;
-    border:1px solid var(--line); border-radius:50%;
-    background:var(--white); cursor:pointer; padding:0;
-    transition:background-color .25s ease, border-color .25s ease;
-  }
-  .theme-toggle:hover{border-color:var(--amber);}
-  [data-theme="dark"] .theme-toggle{background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.2);}
-  .theme-toggle svg{width:18px; height:18px; display:none;}
-  .theme-toggle svg path,
-  .theme-toggle svg circle,
-  .theme-toggle svg line{fill:var(--ink); stroke:var(--ink);}
-  [data-theme="light"] .theme-toggle .icon-moon{display:block;}
-  [data-theme="dark"] .theme-toggle .icon-sun{display:block;}
   .nav-right{display:flex; align-items:center;}
 
   @media (max-width:640px){
@@ -311,22 +284,6 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-right">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle day and night mode">
-        <svg class="icon-moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z" stroke="none"/>
-        </svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="4.2" stroke="none"/>
-          <line x1="12" y1="1.5" x2="12" y2="4" stroke-width="2" stroke-linecap="round"/>
-          <line x1="12" y1="20" x2="12" y2="22.5" stroke-width="2" stroke-linecap="round"/>
-          <line x1="1.5" y1="12" x2="4" y2="12" stroke-width="2" stroke-linecap="round"/>
-          <line x1="20" y1="12" x2="22.5" y2="12" stroke-width="2" stroke-linecap="round"/>
-          <line x1="4.2" y1="4.2" x2="6" y2="6" stroke-width="2" stroke-linecap="round"/>
-          <line x1="18" y1="18" x2="19.8" y2="19.8" stroke-width="2" stroke-linecap="round"/>
-          <line x1="4.2" y1="19.8" x2="6" y2="18" stroke-width="2" stroke-linecap="round"/>
-          <line x1="18" y1="6" x2="19.8" y2="4.2" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </button>
       <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
     </div>
   </div>
@@ -549,23 +506,6 @@
   toggle.addEventListener('click', function(){ menu.classList.toggle('open'); });
   menu.querySelectorAll('a').forEach(function(a){
     a.addEventListener('click', function(){ menu.classList.remove('open'); });
-  });
-
-  // Day / night theme toggle
-  var root = document.documentElement;
-  var themeToggle = document.getElementById('themeToggle');
-  function applyTheme(theme){
-    root.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-  }
-  var savedTheme = localStorage.getItem('theme');
-  if(!savedTheme){
-    savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
-  applyTheme(savedTheme);
-  themeToggle.addEventListener('click', function(){
-    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    applyTheme(next);
   });
 </script>
 
