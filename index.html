@@ -18,6 +18,16 @@
     --white:#FFFFFF;
     --max:860px;
   }
+  [data-theme="dark"]{
+    --paper:#12141B;
+    --ink:#ECEEF3;
+    --ink-soft:#9AA3B2;
+    --line:#2A2E38;
+    --amber:#E9B94D;
+    --amber-soft:#2A2410;
+    --white:#191C24;
+  }
+  body{ transition:background-color .25s ease, color .25s ease; }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
@@ -53,6 +63,22 @@
   nav a:hover{color:var(--amber);}
   .nav-toggle{display:none; background:none; border:none; font-size:1.5rem; cursor:pointer; color:var(--ink);}
 
+  .theme-toggle{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:36px; height:36px; margin-left:18px;
+    border:1px solid var(--line); border-radius:50%;
+    background:var(--white); cursor:pointer; padding:0;
+    transition:background-color .25s ease, border-color .25s ease;
+  }
+  .theme-toggle:hover{border-color:var(--amber);}
+  .theme-toggle svg{width:18px; height:18px; display:none;}
+  .theme-toggle svg path,
+  .theme-toggle svg circle,
+  .theme-toggle svg line{fill:var(--ink); stroke:var(--ink);}
+  [data-theme="light"] .theme-toggle .icon-moon{display:block;}
+  [data-theme="dark"] .theme-toggle .icon-sun{display:block;}
+  .nav-right{display:flex; align-items:center;}
+
   @media (max-width:640px){
     .hero-row{justify-content:center; text-align:center;}
     .hero-sub{margin-left:auto; margin-right:auto;}
@@ -68,6 +94,7 @@
     nav ul li{border-top:1px solid var(--line);}
     nav ul a{display:block; padding:14px 28px;}
     .nav-toggle{display:block;}
+    .nav-right{order:2;}
   }
 
   header.hero{
@@ -246,7 +273,6 @@
 <nav>
   <div class="wrap">
     <div class="brand">Jeisa<span>.</span>Mathew</div>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
     <ul id="navMenu">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -255,6 +281,25 @@
       <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle day and night mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z" stroke="none"/>
+        </svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="4.2" stroke="none"/>
+          <line x1="12" y1="1.5" x2="12" y2="4" stroke-width="2" stroke-linecap="round"/>
+          <line x1="12" y1="20" x2="12" y2="22.5" stroke-width="2" stroke-linecap="round"/>
+          <line x1="1.5" y1="12" x2="4" y2="12" stroke-width="2" stroke-linecap="round"/>
+          <line x1="20" y1="12" x2="22.5" y2="12" stroke-width="2" stroke-linecap="round"/>
+          <line x1="4.2" y1="4.2" x2="6" y2="6" stroke-width="2" stroke-linecap="round"/>
+          <line x1="18" y1="18" x2="19.8" y2="19.8" stroke-width="2" stroke-linecap="round"/>
+          <line x1="4.2" y1="19.8" x2="6" y2="18" stroke-width="2" stroke-linecap="round"/>
+          <line x1="18" y1="6" x2="19.8" y2="4.2" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+    </div>
   </div>
 </nav>
 
@@ -465,6 +510,23 @@
   toggle.addEventListener('click', function(){ menu.classList.toggle('open'); });
   menu.querySelectorAll('a').forEach(function(a){
     a.addEventListener('click', function(){ menu.classList.remove('open'); });
+  });
+
+  // Day / night theme toggle
+  var root = document.documentElement;
+  var themeToggle = document.getElementById('themeToggle');
+  function applyTheme(theme){
+    root.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }
+  var savedTheme = localStorage.getItem('theme');
+  if(!savedTheme){
+    savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  applyTheme(savedTheme);
+  themeToggle.addEventListener('click', function(){
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
   });
 </script>
 
