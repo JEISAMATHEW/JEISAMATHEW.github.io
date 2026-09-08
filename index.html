@@ -27,7 +27,33 @@
     --amber-soft:#2A2410;
     --white:#191C24;
   }
-  body{ transition:background-color .25s ease, color .25s ease; }
+  body{ transition:background-color .25s ease, color .25s ease; position:relative; }
+
+  .page-stars{
+    position:fixed; inset:0; z-index:-2;
+    background:linear-gradient(180deg, #0B1B2B 0%, #12283D 45%, #1B3A52 78%, #234A63 100%);
+    opacity:0; transition:opacity .4s ease; pointer-events:none;
+  }
+  [data-theme="dark"] .page-stars{opacity:1;}
+  .page-stars span{
+    position:absolute; width:2px; height:2px; background:#fff; border-radius:50%;
+    opacity:.7; animation:twinkle 3.2s ease-in-out infinite;
+  }
+  .page-stars span.big{width:3px; height:3px;}
+
+  [data-theme="dark"] body{background:transparent;}
+  [data-theme="dark"] nav{background:rgba(18,20,27,0.75); border-color:rgba(255,255,255,0.1);}
+  [data-theme="dark"] section{border-color:rgba(255,255,255,0.1);}
+  [data-theme="dark"] .proj-grid{background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.1);}
+  [data-theme="dark"] .proj{background:rgba(20,24,34,0.72); backdrop-filter:blur(2px);}
+  [data-theme="dark"] table.skills td{border-color:rgba(255,255,255,0.1);}
+  [data-theme="dark"] .job{border-color:rgba(255,255,255,0.1);}
+  [data-theme="dark"] .edu{border-color:rgba(255,255,255,0.1);}
+  [data-theme="dark"] .note{background:rgba(233,217,138,0.12); border-color:rgba(233,217,138,0.35); color:#F4E9B8;}
+  [data-theme="dark"] .contact-list{border-color:rgba(255,255,255,0.1);}
+  [data-theme="dark"] .contact-list a{background:rgba(20,24,34,0.72); border-color:rgba(255,255,255,0.1);}
+  [data-theme="dark"] .contact-list a:hover{background:rgba(233,217,138,0.12);}
+  [data-theme="dark"] .stat-card{background:rgba(255,255,255,0.06);}
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
@@ -61,6 +87,7 @@
   nav ul{list-style:none; display:flex; gap:26px; margin:0; padding:0;}
   nav a{text-decoration:none; font-size:0.92rem; color:var(--ink-soft); font-weight:500;}
   nav a:hover{color:var(--amber);}
+  [data-theme="dark"] nav a{color:#C7D3DE;}
   .nav-toggle{display:none; background:none; border:none; font-size:1.5rem; cursor:pointer; color:var(--ink);}
 
   .theme-toggle{
@@ -71,6 +98,7 @@
     transition:background-color .25s ease, border-color .25s ease;
   }
   .theme-toggle:hover{border-color:var(--amber);}
+  [data-theme="dark"] .theme-toggle{background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.2);}
   .theme-toggle svg{width:18px; height:18px; display:none;}
   .theme-toggle svg path,
   .theme-toggle svg circle,
@@ -269,6 +297,7 @@
 </style>
 </head>
 <body>
+<div class="page-stars" id="pageStars"></div>
 
 <nav>
   <div class="wrap">
@@ -484,6 +513,16 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  var pageStars = document.getElementById('pageStars');
+  for(var k=0;k<80;k++){
+    var ps = document.createElement('span');
+    if(Math.random() > 0.85) ps.className = 'big';
+    ps.style.left = Math.random()*100 + '%';
+    ps.style.top = Math.random()*100 + '%';
+    ps.style.animationDelay = (Math.random()*3) + 's';
+    pageStars.appendChild(ps);
+  }
 
   var starField = document.getElementById('starField');
   for(var i=0;i<60;i++){
