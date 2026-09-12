@@ -22,9 +22,37 @@
     --max:860px;
   }
 
+  *{
+    box-sizing:border-box;
+  }
+
+  html{
+    scroll-behavior:smooth;
+  }
+
   body{
     position:relative;
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.6;
   }
+
+  h1,h2,h3{
+    font-family:'Space Grotesk',sans-serif;
+    margin:0;
+    color:var(--ink);
+  }
+
+  a{
+    color:var(--ink);
+  }
+
+  /* =========================
+     BACKGROUND
+  ========================= */
 
   .page-stars{
     position:fixed;
@@ -71,42 +99,9 @@
     animation:drift 6s ease-in-out infinite;
   }
 
-  body{
-    background:transparent;
-  }
-
-  *{
-    box-sizing:border-box;
-  }
-
-  html{
-    scroll-behavior:smooth;
-  }
-
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Inter',sans-serif;
-    font-size:16px;
-    line-height:1.6;
-  }
-
-  h1,h2,h3{
-    font-family:'Space Grotesk',sans-serif;
-    margin:0;
-    color:var(--ink);
-  }
-
-  a{
-    color:var(--ink);
-  }
-
-  .wrap{
-    max-width:var(--max);
-    margin:0 auto;
-    padding:0 28px;
-  }
+  /* =========================
+     NAVIGATION
+  ========================= */
 
   nav{
     position:sticky;
@@ -168,61 +163,24 @@
     align-items:center;
   }
 
-  @media (max-width:640px){
+  /* =========================
+     GENERAL LAYOUT
+  ========================= */
 
-    .hero-row{
-      justify-content:center;
-      text-align:center;
-    }
-
-    .hero-sub{
-      margin-left:auto;
-      margin-right:auto;
-    }
-
-    .hero-actions{
-      justify-content:center;
-    }
-
-    .hero-badges{
-      justify-content:center;
-    }
-
-    nav ul{
-      position:absolute;
-      top:100%;
-      left:0;
-      right:0;
-      background:var(--paper);
-      flex-direction:column;
-      gap:0;
-      border-bottom:1px solid var(--line);
-      max-height:0;
-      overflow:hidden;
-      transition:max-height .25s ease;
-    }
-
-    nav ul.open{
-      max-height:320px;
-    }
-
-    nav ul li{
-      border-top:1px solid var(--line);
-    }
-
-    nav ul a{
-      display:block;
-      padding:14px 28px;
-    }
-
-    .nav-toggle{
-      display:block;
-    }
-
-    .nav-right{
-      order:2;
-    }
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 28px;
   }
+
+  section{
+    padding:56px 0;
+    border-top:1px solid var(--line);
+  }
+
+  /* =========================
+     HERO
+  ========================= */
 
   header.hero{
     padding:48px 0 80px;
@@ -251,102 +209,6 @@
   header.hero .wrap{
     position:relative;
     z-index:2;
-  }
-
-  .stars{
-    position:absolute;
-    inset:0;
-    z-index:1;
-  }
-
-  .stars span{
-    position:absolute;
-    width:2px;
-    height:2px;
-    background:#fff;
-    border-radius:50%;
-    opacity:.75;
-    animation:twinkle 3.2s ease-in-out infinite;
-  }
-
-  .stars span.big{
-    width:3px;
-    height:3px;
-  }
-
-  @keyframes twinkle{
-    0%,100%{
-      opacity:.25;
-    }
-
-    50%{
-      opacity:1;
-    }
-  }
-
-  .fireflies{
-    position:absolute;
-    inset:0;
-    z-index:1;
-  }
-
-  .fireflies span{
-    position:absolute;
-    width:6px;
-    height:6px;
-    border-radius:50%;
-    background:#E9D98A;
-    box-shadow:0 0 8px 3px rgba(233,217,138,0.7);
-    animation:drift 6s ease-in-out infinite;
-  }
-
-  @keyframes drift{
-
-    0%,100%{
-      transform:translateY(0);
-    }
-
-    50%{
-      transform:translateY(-14px);
-    }
-
-  }
-
-  .treeline{
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-    height:120px;
-    z-index:1;
-    background:#08131E;
-
-    clip-path:polygon(
-      0% 100%,
-      0% 55%,
-      4% 60%,
-      8% 40%,
-      12% 58%,
-      17% 45%,
-      22% 62%,
-      28% 48%,
-      33% 65%,
-      39% 50%,
-      45% 63%,
-      52% 44%,
-      58% 60%,
-      64% 46%,
-      70% 63%,
-      76% 50%,
-      82% 62%,
-      88% 47%,
-      93% 60%,
-      97% 52%,
-      100% 60%,
-      100% 100%
-    );
-
-    opacity:0.85;
   }
 
   .hero-row{
@@ -382,43 +244,14 @@
     transform-origin:70% 70%;
   }
 
-  @keyframes wave{
-
-    0%{
-      transform:rotate(0deg);
-    }
-
-    10%{
-      transform:rotate(14deg);
-    }
-
-    20%{
-      transform:rotate(-8deg);
-    }
-
-    30%{
-      transform:rotate(14deg);
-    }
-
-    40%{
-      transform:rotate(-4deg);
-    }
-
-    50%{
-      transform:rotate(10deg);
-    }
-
-    60%,100%{
-      transform:rotate(0deg);
-    }
-
-  }
-
   .hero-sub{
     margin-top:14px;
     font-size:1.08rem;
     color:#C7D3DE;
     max-width:52ch;
+
+    /* JUSTIFIED */
+    text-align:justify;
   }
 
   .hero-badges{
@@ -511,26 +344,16 @@
     color:#E9D98A;
   }
 
+  /* =========================
+     HERO STATS
+  ========================= */
+
   .stat-card{
     flex:0 0 260px;
     width:260px;
     border:1px solid rgba(233,217,138,0.35);
     background:rgba(255,255,255,0.06);
     backdrop-filter:blur(2px);
-  }
-
-  @media (min-width:900px){
-
-    .stat-card{
-      position:absolute;
-      top:-8px;
-      right:0;
-    }
-
-    .hero-main{
-      padding-right:290px;
-    }
-
   }
 
   .stat-row{
@@ -557,10 +380,151 @@
     line-height:1.4;
   }
 
-  section{
-    padding:56px 0;
-    border-top:1px solid var(--line);
+  /* =========================
+     STARS
+  ========================= */
+
+  .stars{
+    position:absolute;
+    inset:0;
+    z-index:1;
   }
+
+  .stars span{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:#fff;
+    border-radius:50%;
+    opacity:.75;
+    animation:twinkle 3.2s ease-in-out infinite;
+  }
+
+  .stars span.big{
+    width:3px;
+    height:3px;
+  }
+
+  .fireflies{
+    position:absolute;
+    inset:0;
+    z-index:1;
+  }
+
+  .fireflies span{
+    position:absolute;
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:#E9D98A;
+    box-shadow:0 0 8px 3px rgba(233,217,138,0.7);
+    animation:drift 6s ease-in-out infinite;
+  }
+
+  /* =========================
+     ANIMATIONS
+  ========================= */
+
+  @keyframes twinkle{
+
+    0%,100%{
+      opacity:.25;
+    }
+
+    50%{
+      opacity:1;
+    }
+
+  }
+
+  @keyframes drift{
+
+    0%,100%{
+      transform:translateY(0);
+    }
+
+    50%{
+      transform:translateY(-14px);
+    }
+
+  }
+
+  @keyframes wave{
+
+    0%{
+      transform:rotate(0deg);
+    }
+
+    10%{
+      transform:rotate(14deg);
+    }
+
+    20%{
+      transform:rotate(-8deg);
+    }
+
+    30%{
+      transform:rotate(14deg);
+    }
+
+    40%{
+      transform:rotate(-4deg);
+    }
+
+    50%{
+      transform:rotate(10deg);
+    }
+
+    60%,100%{
+      transform:rotate(0deg);
+    }
+
+  }
+
+  /* =========================
+     TREE LINE
+  ========================= */
+
+  .treeline{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:120px;
+    z-index:1;
+    background:#08131E;
+
+    clip-path:polygon(
+      0% 100%,
+      0% 55%,
+      4% 60%,
+      8% 40%,
+      12% 58%,
+      17% 45%,
+      22% 62%,
+      28% 48%,
+      33% 65%,
+      39% 50%,
+      45% 63%,
+      52% 44%,
+      58% 60%,
+      64% 46%,
+      70% 63%,
+      76% 50%,
+      82% 62%,
+      88% 47%,
+      93% 60%,
+      97% 52%,
+      100% 60%,
+      100% 100%
+    );
+
+    opacity:0.85;
+  }
+
+  /* =========================
+     SECTION HEADINGS
+  ========================= */
 
   .section-head{
     display:flex;
@@ -581,11 +545,22 @@
     letter-spacing:-0.01em;
   }
 
+  /* =========================
+     ABOUT
+  ========================= */
+
   .about-text{
     max-width:62ch;
     color:var(--ink-soft);
     font-size:1.02rem;
+
+    /* JUSTIFIED */
+    text-align:justify;
   }
+
+  /* =========================
+     SKILLS
+  ========================= */
 
   table.skills{
     width:100%;
@@ -608,6 +583,10 @@
   table.skills td.val{
     font-weight:500;
   }
+
+  /* =========================
+     EXPERIENCE
+  ========================= */
 
   .job{
     display:flex;
@@ -637,6 +616,10 @@
     font-size:0.92rem;
   }
 
+  /* =========================
+     NOTES
+  ========================= */
+
   .note{
     background:transparent;
     border:1px solid rgba(99,102,241,0.35);
@@ -644,7 +627,14 @@
     font-size:0.88rem;
     color:#A5B4FC;
     margin-bottom:26px;
+
+    /* JUSTIFIED */
+    text-align:justify;
   }
+
+  /* =========================
+     PROJECT GRID
+  ========================= */
 
   .proj-grid{
     display:grid;
@@ -652,14 +642,6 @@
     gap:1px;
     background:var(--line);
     border:1px solid var(--line);
-  }
-
-  @media (max-width:640px){
-
-    .proj-grid{
-      grid-template-columns:1fr;
-    }
-
   }
 
   .proj{
@@ -690,6 +672,9 @@
     color:var(--ink-soft);
     font-size:0.92rem;
     margin-top:8px;
+
+    /* JUSTIFIED */
+    text-align:justify;
   }
 
   .proj .stack{
@@ -698,13 +683,18 @@
     color:var(--ink-soft);
   }
 
+  /* =========================
+     FEATURED EV PROJECT
+  ========================= */
+
   .proj-featured{
-    display:flex;
-    flex-wrap:wrap;
+    display:grid;
+    grid-template-columns:1fr 1fr;
     gap:0;
     border:1px solid var(--line);
     background:var(--paper);
     transition:box-shadow .25s ease, transform .25s ease;
+    overflow:hidden;
   }
 
   .proj-featured:hover{
@@ -713,8 +703,10 @@
   }
 
   .proj-featured-text{
-    flex:1 1 320px;
     padding:26px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
   }
 
   .proj-featured-text .proj-tag{
@@ -734,6 +726,9 @@
     color:var(--ink-soft);
     font-size:0.92rem;
     margin-top:8px;
+
+    /* JUSTIFIED */
+    text-align:justify;
   }
 
   .proj-featured-text .stack{
@@ -753,9 +748,8 @@
   }
 
   .proj-featured-thumb{
-    flex:1 1 320px;
-    min-height:220px;
     display:block;
+    min-height:280px;
     background:#0B1B2B;
     border-left:1px solid var(--line);
     overflow:hidden;
@@ -766,17 +760,11 @@
     height:100%;
     object-fit:cover;
     display:block;
-    min-height:220px;
   }
 
-  @media (max-width:640px){
-
-    .proj-featured-thumb{
-      border-left:none;
-      border-top:1px solid var(--line);
-    }
-
-  }
+  /* =========================
+     EDUCATION
+  ========================= */
 
   .edu{
     display:flex;
@@ -805,6 +793,10 @@
     font-size:0.9rem;
     text-align:right;
   }
+
+  /* =========================
+     CONTACT
+  ========================= */
 
   .contact-list{
     display:flex;
@@ -842,10 +834,140 @@
     font-family:'Space Grotesk',sans-serif;
   }
 
+  /* =========================
+     FOOTER
+  ========================= */
+
   footer{
     padding:30px 0 50px;
     color:var(--ink-soft);
     font-size:0.85rem;
+  }
+
+  /* =========================
+     DESKTOP
+  ========================= */
+
+  @media (min-width:900px){
+
+    .stat-card{
+      position:absolute;
+      top:-8px;
+      right:0;
+    }
+
+    .hero-main{
+      padding-right:290px;
+    }
+
+  }
+
+  /* =========================
+     MOBILE
+  ========================= */
+
+  @media (max-width:640px){
+
+    .hero-row{
+      justify-content:center;
+      text-align:center;
+    }
+
+    .hero-sub{
+      margin-left:auto;
+      margin-right:auto;
+      text-align:justify;
+    }
+
+    .hero-actions{
+      justify-content:center;
+    }
+
+    .hero-badges{
+      justify-content:center;
+    }
+
+    nav ul{
+      position:absolute;
+      top:100%;
+      left:0;
+      right:0;
+      background:var(--paper);
+      flex-direction:column;
+      gap:0;
+      border-bottom:1px solid var(--line);
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .25s ease;
+    }
+
+    nav ul.open{
+      max-height:320px;
+    }
+
+    nav ul li{
+      border-top:1px solid var(--line);
+    }
+
+    nav ul a{
+      display:block;
+      padding:14px 28px;
+    }
+
+    .nav-toggle{
+      display:block;
+    }
+
+    .nav-right{
+      order:2;
+    }
+
+    .proj-grid{
+      grid-template-columns:1fr;
+    }
+
+    .proj-featured{
+      grid-template-columns:1fr;
+    }
+
+    .proj-featured-thumb{
+      border-left:none;
+      border-top:1px solid var(--line);
+      min-height:220px;
+    }
+
+    .proj-featured-thumb img{
+      min-height:220px;
+    }
+
+    .job{
+      flex-direction:column;
+      gap:4px;
+    }
+
+    .job-when{
+      flex:initial;
+    }
+
+    .edu{
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .edu-right{
+      text-align:left;
+      white-space:normal;
+    }
+
+    .contact-list a{
+      gap:15px;
+    }
+
+    .contact-list .arrow{
+      text-align:right;
+      word-break:break-word;
+    }
+
   }
 
 </style>
@@ -856,6 +978,10 @@
 <div class="page-stars" id="pageStars"></div>
 <div class="page-fireflies" id="pageFireflies"></div>
 
+
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav>
 
@@ -908,6 +1034,10 @@
 
 </nav>
 
+
+<!-- =========================
+     HERO
+========================= -->
 
 <header class="hero">
 
@@ -1005,6 +1135,8 @@
     </div>
 
 
+    <!-- HERO INFO CARD -->
+
     <div class="stat-card">
 
       <div class="stat-row">
@@ -1067,6 +1199,10 @@
 </header>
 
 
+<!-- =========================
+     ABOUT
+========================= -->
+
 <section id="about">
 
   <div class="wrap">
@@ -1096,6 +1232,10 @@
 
 </section>
 
+
+<!-- =========================
+     SKILLS
+========================= -->
 
 <section id="skills">
 
@@ -1173,6 +1313,10 @@
 
 </section>
 
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
 
 <section id="experience">
 
@@ -1281,6 +1425,10 @@
 </section>
 
 
+<!-- =========================
+     DATA ANALYTICS PROJECTS
+========================= -->
+
 <section id="projects">
 
   <div class="wrap">
@@ -1305,6 +1453,8 @@
     </div>
 
 
+    <!-- EV FEATURED PROJECT -->
+
     <div class="proj-featured">
 
 
@@ -1321,6 +1471,7 @@
           Project 1 · Excel
 
         </div>
+
 
         <h3>
           EV Charging Recommendation Dashboard
@@ -1344,7 +1495,8 @@
         <div class="stack">
 
           <a
-            href="https://github.com/JEISAMATHEW/EV_Recommendation_Dashboard" target="_blank">
+            href="https://github.com/JEISAMATHEW/EV_Recommendation_Dashboard"
+            target="_blank">
 
             View on GitHub →
 
@@ -1354,11 +1506,17 @@
 
       </div>
 
+
+      <!-- EV DASHBOARD IMAGE -->
+
       <a
-        class="proj-featured-thumb" href="https://github.com/JEISAMATHEW/EV_Recommendation_Dashboard/blob/main/ev_charging_pink_theme.jpg" target="_blank">
+        class="proj-featured-thumb"
+        href="https://github.com/JEISAMATHEW/EV_Recommendation_Dashboard/blob/main/ev_charging_pink_theme.jpg"
+        target="_blank">
 
         <img
-          src="https://raw.githubusercontent.com/JEISAMATHEW/EV_Recommendation_Dashboard/main/ev_charging_pink_theme.jpg" alt="EV Charging Recommendation Dashboard screenshot">
+          src="https://raw.githubusercontent.com/JEISAMATHEW/EV_Recommendation_Dashboard/main/ev_charging_pink_theme.jpg"
+          alt="EV Charging Recommendation Dashboard screenshot">
 
       </a>
 
@@ -1369,6 +1527,10 @@
 
 </section>
 
+
+<!-- =========================
+     ACADEMIC PROJECTS
+========================= -->
 
 <section id="academic-projects">
 
@@ -1542,6 +1704,10 @@
 </section>
 
 
+<!-- =========================
+     EDUCATION
+========================= -->
+
 <section id="education">
 
   <div class="wrap">
@@ -1649,6 +1815,10 @@
 </section>
 
 
+<!-- =========================
+     CONTACT
+========================= -->
+
 <section id="contact">
 
   <div class="wrap">
@@ -1733,8 +1903,16 @@
 
 </section>
 
-  
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
 <script>
+
+  /* =========================
+     PAGE BACKGROUND STARS
+  ========================= */
 
   var pageStars =
     document.getElementById('pageStars');
@@ -1760,6 +1938,11 @@
 
   }
 
+
+  /* =========================
+     PAGE FIREFLIES
+  ========================= */
+
   var pageFireflies =
     document.getElementById('pageFireflies');
 
@@ -1783,6 +1966,11 @@
     pageFireflies.appendChild(pf);
 
   }
+
+
+  /* =========================
+     HERO STARS
+  ========================= */
 
   var starField =
     document.getElementById('starField');
@@ -1808,6 +1996,11 @@
 
   }
 
+
+  /* =========================
+     HERO FIREFLIES
+  ========================= */
+
   var fireflyField =
     document.getElementById('fireflyField');
 
@@ -1831,6 +2024,11 @@
     fireflyField.appendChild(f);
 
   }
+
+
+  /* =========================
+     MOBILE NAVIGATION
+  ========================= */
 
   var toggle =
     document.getElementById('navToggle');
