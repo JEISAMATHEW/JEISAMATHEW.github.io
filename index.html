@@ -684,7 +684,77 @@
   }
 
   /* =========================
-     FEATURED PROJECTS
+     PROJECT CARD GRID (image-first cards)
+  ========================= */
+
+  .module-label{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:0.82rem;
+    color:var(--amber);
+    font-weight:600;
+    letter-spacing:0.01em;
+    margin-bottom:20px;
+  }
+
+  .card-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+  }
+
+  .card-thumb{
+    display:block;
+    border-radius:10px;
+    overflow:hidden;
+    aspect-ratio:16/10;
+    background:#0B1B2B;
+    border:1px solid var(--line);
+    margin-bottom:16px;
+  }
+
+  .card-thumb img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .3s ease;
+  }
+
+  .card:hover .card-thumb img{
+    transform:scale(1.04);
+  }
+
+  .card h3{
+    font-size:1.1rem;
+    color:var(--ink);
+    margin-bottom:8px;
+  }
+
+  .card p{
+    color:var(--ink-soft);
+    font-size:0.92rem;
+
+    /* JUSTIFIED */
+    text-align:justify;
+  }
+
+  .card .stack{
+    margin-top:12px;
+    font-size:0.85rem;
+  }
+
+  .card .stack a{
+    color:var(--amber);
+    text-decoration:none;
+    font-weight:600;
+  }
+
+  .card .stack a:hover{
+    text-decoration:underline;
+  }
+
+  /* =========================
+     FEATURED PROJECTS (legacy, unused)
   ========================= */
 
   .proj-featured{
@@ -924,6 +994,10 @@
     }
 
     .proj-grid{
+      grid-template-columns:1fr;
+    }
+
+    .card-grid{
       grid-template-columns:1fr;
     }
 
@@ -1454,44 +1528,38 @@
     </div>
 
 
-    <!-- EXCEL CASE STUDIES FEATURED PROJECT -->
+    <div class="module-label">
+      Module 1 · Excel & GenAI for Analytics
+    </div>
 
-    <div class="proj-featured">
+
+    <div class="card-grid">
 
 
-      <div class="proj-featured-text">
+      <!-- EXCEL CASE STUDIES CARD -->
 
-        <div class="proj-tag">
+      <div class="card">
 
-          Module 1 · Excel & GenAI for Analytics
+        <a
+          class="card-thumb"
+          href="https://github.com/JEISAMATHEW/Excel-Business-Analysis-Case-Studies"
+          target="_blank">
 
-        </div>
+          <img
+            src="https://raw.githubusercontent.com/JEISAMATHEW/Excel-Business-Analysis-Case-Studies/main/Gantt_Chart_Output.png"
+            alt="Excel Business Analysis Case Studies screenshot">
 
-        <div class="proj-tag">
-
-          Project 2 · Excel
-
-        </div>
-
+        </a>
 
         <h3>
           Excel Business Analysis – Practical Case Studies
         </h3>
 
-
         <p>
 
-          Four practical Excel case studies covering Gantt Charts, Sales Forecasting, What-If Analysis, and Scenario Comparison — simulating the real decision-making workflow of a Business Analyst, from project planning through to a data-backed recommendation.
+          Four practical Excel case studies covering Gantt Charts, Sales Forecasting, What-If Analysis, and Scenario Comparison — simulating the real decision-making workflow of a Business Analyst.
 
         </p>
-
-
-        <div class="stack">
-
-          Microsoft Excel · Scenario Manager · Forecasting · Data Visualization
-
-        </div>
-
 
         <div class="stack">
 
@@ -1508,61 +1576,30 @@
       </div>
 
 
-      <!-- EXCEL CASE STUDIES IMAGE -->
+      <!-- EV DASHBOARD CARD -->
 
-      <a
-        class="proj-featured-thumb"
-        href="https://github.com/JEISAMATHEW/Excel-Business-Analysis-Case-Studies"
-        target="_blank">
+      <div class="card">
 
-        <img
-          src="https://raw.githubusercontent.com/JEISAMATHEW/Excel-Business-Analysis-Case-Studies/main/Gantt_Chart_Output.png"
-          alt="Excel Business Analysis Case Studies screenshot">
+        <a
+          class="card-thumb"
+          href="https://github.com/JEISAMATHEW/EV_Recommendation_Dashboard"
+          target="_blank">
 
-      </a>
+          <img
+            src="https://raw.githubusercontent.com/JEISAMATHEW/EV_Recommendation_Dashboard/main/ev_charging_pink_theme.jpg"
+            alt="EV Charging Recommendation Dashboard screenshot">
 
-
-    </div>
-
-
-    <!-- EV FEATURED PROJECT -->
-
-    <div class="proj-featured">
-
-
-      <div class="proj-featured-text">
-
-        <div class="proj-tag">
-
-          Module 1 · Excel & GenAI for Analytics
-
-        </div>
-
-        <div class="proj-tag">
-
-          Project 1 · Excel
-
-        </div>
-
+        </a>
 
         <h3>
           EV Charging Recommendation Dashboard
         </h3>
-
 
         <p>
 
           An interactive Excel dashboard recommending the optimal EV charging station using a weighted score across distance, queue length, and battery level, built on a cleaned dataset of 1,100+ stations.
 
         </p>
-
-
-        <div class="stack">
-
-          Microsoft Excel · Data Cleaning · Dashboard Design
-
-        </div>
-
 
         <div class="stack">
 
@@ -1577,20 +1614,6 @@
         </div>
 
       </div>
-
-
-      <!-- EV DASHBOARD IMAGE -->
-
-      <a
-        class="proj-featured-thumb"
-        href="https://github.com/JEISAMATHEW/EV_Recommendation_Dashboard/blob/main/ev_charging_pink_theme.jpg"
-        target="_blank">
-
-        <img
-          src="https://raw.githubusercontent.com/JEISAMATHEW/EV_Recommendation_Dashboard/main/ev_charging_pink_theme.jpg"
-          alt="EV Charging Recommendation Dashboard screenshot">
-
-      </a>
 
 
     </div>
