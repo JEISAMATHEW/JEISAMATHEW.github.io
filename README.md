@@ -1,6 +1,6 @@
 # Jeisa Mathew — Personal Portfolio
 
-This is the source code for my personal portfolio website, built to showcase my background, skills, and academic projects as an aspiring Data Analyst.
+This is the source code for my personal portfolio website, built to showcase my background, skills, and projects as an aspiring Tableau Developer and Data Analyst.
 
 🔗 **Live site:** https://jeisamathew.github.io/
 
@@ -10,6 +10,7 @@ A single-page, fully responsive portfolio covering:
 - About me
 - Technical skills
 - Work experience
+- Data analytics projects
 - Academic projects
 - Education
 - Contact details and downloadable resume
