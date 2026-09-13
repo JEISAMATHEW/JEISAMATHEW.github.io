@@ -562,26 +562,38 @@
      SKILLS
   ========================= */
 
-  table.skills{
-    width:100%;
-    border-collapse:collapse;
+  .skills-group{
+    margin-bottom:32px;
   }
 
-  table.skills td{
-    padding:13px 4px;
-    border-bottom:1px solid var(--line);
-    font-size:0.96rem;
-    vertical-align:top;
+  .skills-group:last-child{
+    margin-bottom:0;
   }
 
-  table.skills td.cat{
-    width:38%;
-    color:var(--ink-soft);
-    font-weight:500;
+  .skills-cat{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:1.05rem;
+    font-weight:600;
+    color:var(--ink);
+    margin-bottom:16px;
   }
 
-  table.skills td.val{
-    font-weight:500;
+  .skills-cat .skills-icon{
+    font-size:1.1rem;
+    line-height:1;
+  }
+
+  .skills-badges{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  .skills-badges img{
+    height:28px;
+    border-radius:4px;
   }
 
   /* =========================
@@ -1347,60 +1359,77 @@
     </div>
 
 
-    <table class="skills">
+    <div class="skills-group">
 
-      <tr>
+      <h3 class="skills-cat">
+        <span class="skills-icon">📊</span>
+        Data Analytics & Visualization
+      </h3>
 
-        <td class="cat">
-          Data Analytics & Visualization
-        </td>
+      <div class="skills-badges">
 
-        <td class="val">
-          Excel, Power BI, Tableau, SQL
-        </td>
+        <img src="https://img.shields.io/badge/Excel-217346?style=flat-square&logo=microsoftexcel&logoColor=white" alt="Excel">
+        <img src="https://img.shields.io/badge/Power%20BI-F2C811?style=flat-square&logo=powerbi&logoColor=white" alt="Power BI">
+        <img src="https://img.shields.io/badge/Tableau-E97627?style=flat-square&logo=tableau&logoColor=white" alt="Tableau">
+        <img src="https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="SQL">
 
-      </tr>
+      </div>
 
-
-      <tr>
-
-        <td class="cat">
-          Programming & Machine Learning
-        </td>
-
-        <td class="val">
-          Python, Jupyter, Anaconda
-        </td>
-
-      </tr>
+    </div>
 
 
-      <tr>
+    <div class="skills-group">
 
-        <td class="cat">
-          Web Development
-        </td>
+      <h3 class="skills-cat">
+        <span class="skills-icon">🐍</span>
+        Programming & Machine Learning
+      </h3>
 
-        <td class="val">
-          HTML, CSS
-        </td>
+      <div class="skills-badges">
 
-      </tr>
+        <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
+        <img src="https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white" alt="Jupyter">
+        <img src="https://img.shields.io/badge/Anaconda-44A833?style=flat-square&logo=anaconda&logoColor=white" alt="Anaconda">
+
+      </div>
+
+    </div>
 
 
-      <tr>
+    <div class="skills-group">
 
-        <td class="cat">
-          Tools & Platforms
-        </td>
+      <h3 class="skills-cat">
+        <span class="skills-icon">🌐</span>
+        Web Development
+      </h3>
 
-        <td class="val">
-          Kaggle, Git, GitHub, Microsoft Office
-        </td>
+      <div class="skills-badges">
 
-      </tr>
+        <img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML">
+        <img src="https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS">
 
-    </table>
+      </div>
+
+    </div>
+
+
+    <div class="skills-group">
+
+      <h3 class="skills-cat">
+        <span class="skills-icon">🛠</span>
+        Tools & Platforms
+      </h3>
+
+      <div class="skills-badges">
+
+        <img src="https://img.shields.io/badge/Kaggle-20BEFF?style=flat-square&logo=kaggle&logoColor=white" alt="Kaggle">
+        <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git">
+        <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub">
+        <img src="https://img.shields.io/badge/Microsoft%20Office-D83B01?style=flat-square&logo=microsoftoffice&logoColor=white" alt="Microsoft Office">
+
+      </div>
+
+    </div>
 
   </div>
 
