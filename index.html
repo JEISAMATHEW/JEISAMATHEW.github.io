@@ -600,8 +600,16 @@
   .job{
     display:flex;
     gap:24px;
-    padding:18px 0;
+    padding:18px 14px;
     border-bottom:1px solid var(--line);
+    border-radius:8px;
+    transition:box-shadow .25s ease, transform .25s ease, background-color .25s ease;
+  }
+
+  .job:hover{
+    box-shadow:0 0 22px rgba(99,102,241,0.35);
+    transform:translateY(-3px);
+    background:rgba(255,255,255,0.03);
   }
 
   .job:last-child{
@@ -860,8 +868,16 @@
     display:flex;
     justify-content:space-between;
     gap:20px;
-    padding:14px 0;
+    padding:14px;
     border-bottom:1px solid var(--line);
+    border-radius:8px;
+    transition:box-shadow .25s ease, transform .25s ease, background-color .25s ease;
+  }
+
+  .edu:hover{
+    box-shadow:0 0 22px rgba(99,102,241,0.35);
+    transform:translateY(-3px);
+    background:rgba(255,255,255,0.03);
   }
 
   .edu:last-child{
@@ -903,15 +919,19 @@
     text-decoration:none;
     border-bottom:1px solid var(--line);
     background:transparent;
-    transition:box-shadow .25s ease, background-color .25s ease;
+    position:relative;
+    z-index:1;
+    transition:box-shadow .25s ease, background-color .25s ease, transform .25s ease;
+  }
+
+  .contact-list a:hover{
+    box-shadow:0 0 22px rgba(99,102,241,0.35);
+    transform:translateY(-3px);
+    background:rgba(99,102,241,0.1);
   }
 
   .contact-list a:last-child{
     border-bottom:none;
-  }
-
-  .contact-list a:hover{
-    background:rgba(99,102,241,0.1);
   }
 
   .contact-list .label{
