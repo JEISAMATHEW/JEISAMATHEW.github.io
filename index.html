@@ -6,648 +6,368 @@
 <title>Jeisa Mathew | Aspiring Tableau Developer & Data Analyst</title>
 
 <style>
-  :root{
-    --paper:#0F172A;
-    --ink:#F8FAFC;
-    --ink-soft:#94A3B8;
-    --line:rgba(148,163,184,0.18);
-    --amber:#6366F1;
-    --amber-soft:rgba(99,102,241,0.15);
-    --white:#FFFFFF;
-    --max:1140px;
-  }
+:root{
+  --paper:#0F172A;
+  --ink:#F8FAFC;
+  --ink-soft:#94A3B8;
+  --line:rgba(148,163,184,0.18);
+  --amber:#6366F1;
+  --amber-soft:rgba(99,102,241,0.15);
+  --white:#FFFFFF;
+  --max:1140px;
+}
 
-  *{box-sizing:border-box;}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 
-  html{scroll-behavior:smooth;}
+body{
+  position:relative;
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16px;
+  line-height:1.6;
+}
 
-  body{
-    position:relative;
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:Arial, Helvetica, sans-serif;
-    font-size:16px;
-    line-height:1.6;
-  }
+h1,h2,h3{font-family:Arial,Helvetica,sans-serif;margin:0;color:var(--ink);}
+a{color:var(--ink);}
 
-  h1,h2,h3{
-    font-family:Arial, Helvetica, sans-serif;
-    margin:0;
-    color:var(--ink);
-  }
+/* BACKGROUND */
+.page-stars{
+  position:fixed;inset:0;z-index:-2;
+  background:linear-gradient(180deg,#030712 0%,#0F172A 55%,#14213D 100%);
+  pointer-events:none;
+}
+.page-stars span{
+  position:absolute;width:2px;height:2px;background:#fff;
+  border-radius:50%;opacity:.7;
+  animation:twinkle 3.2s ease-in-out infinite;
+}
+.page-stars span.big{width:3px;height:3px;}
+.page-fireflies{position:fixed;inset:0;z-index:-1;pointer-events:none;}
+.page-fireflies span{
+  position:absolute;width:6px;height:6px;border-radius:50%;
+  background:#E9D98A;
+  box-shadow:0 0 8px 3px rgba(233,217,138,0.7);
+  animation:drift 6s ease-in-out infinite;
+}
 
-  a{color:var(--ink);}
+/* NAVIGATION */
+nav{
+  position:sticky;top:0;z-index:10;
+  background:rgba(15,23,42,0.82);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
+}
+nav .wrap{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-top:16px;padding-bottom:16px;
+}
+nav .brand{font-weight:700;font-size:1.05rem;letter-spacing:-0.01em;}
+nav .brand span{color:var(--amber);}
+nav ul{
+  list-style:none;display:flex;gap:26px;margin:0;padding:0;
+}
+nav a{text-decoration:none;font-size:.92rem;color:#C7D3DE;font-weight:500;}
+nav a:hover{color:var(--amber);}
+.nav-toggle{
+  display:none;background:none;border:none;font-size:1.5rem;
+  cursor:pointer;color:var(--ink);
+}
+.nav-right{display:flex;align-items:center;}
 
-  /* BACKGROUND */
-  .page-stars{
-    position:fixed;
-    inset:0;
-    z-index:-2;
-    background:linear-gradient(180deg,#030712 0%,#0F172A 55%,#14213D 100%);
-    pointer-events:none;
-  }
+/* GENERAL LAYOUT */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
+section{padding:56px 0;border-top:1px solid var(--line);}
 
-  .page-stars span{
-    position:absolute;
-    width:2px;
-    height:2px;
-    background:#fff;
-    border-radius:50%;
-    opacity:.7;
-    animation:twinkle 3.2s ease-in-out infinite;
-  }
+/* HERO */
+header.hero{
+  padding:48px 0 80px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 82% 18%,rgba(255,247,214,0.9) 0%,rgba(255,247,214,0.5) 3%,rgba(255,236,170,0.12) 7%,transparent 10%),
+    linear-gradient(180deg,#0B1B2B 0%,#12283D 45%,#1B3A52 78%,#234A63 100%);
+  color:#F4F7FA;
+}
+header.hero .wrap{position:relative;z-index:2;}
+.hero-row{display:flex;gap:40px;flex-wrap:wrap;align-items:flex-start;position:relative;}
+.hero-main{flex:1 1 380px;}
+.kicker{
+  font-family:Arial,Helvetica,sans-serif;font-size:.85rem;
+  color:#E9D98A;font-weight:600;margin-bottom:10px;
+}
+.hero h1{font-size:2.6rem;line-height:1.12;letter-spacing:-0.02em;color:#F4F7FA;}
+.hero h1 .wave{
+  display:inline-block;animation:wave 2.1s ease-in-out infinite;
+  transform-origin:70% 70%;
+}
+.hero-sub{
+  margin-top:14px;font-size:1.08rem;color:#C7D3DE;
+  max-width:52ch;text-align:justify;
+}
+.hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+.hero-badges img{height:28px;border-radius:4px;}
+.hero-actions{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap;}
+.photo-frame{
+  flex:0 0 170px;width:170px;height:170px;border-radius:50%;
+  border:3px solid #E9D98A;
+  box-shadow:0 0 0 8px rgba(233,217,138,0.15),0 0 0 9px rgba(233,217,138,0.35),0 14px 34px rgba(0,0,0,0.5);
+  overflow:hidden;background:#0B1B2B;
+}
+.photo-frame img{width:100%;height:100%;object-fit:cover;display:block;}
+.btn{
+  display:inline-block;padding:11px 22px;border-radius:2px;
+  text-decoration:none;font-weight:600;font-size:.92rem;
+  border:1px solid var(--ink);
+}
+.btn-solid{background:var(--ink);color:var(--white);}
+.btn-solid:hover{background:var(--amber);border-color:var(--amber);color:var(--ink);}
+.btn-outline{border-color:var(--line);color:var(--ink);}
+.btn-outline:hover{border-color:var(--ink);}
+.hero .btn-solid{background:#E9D98A;color:#0B1B2B;border-color:#E9D98A;}
+.hero .btn-solid:hover{background:#F4E9B8;}
+.hero .btn-outline{border-color:rgba(244,247,250,0.4);color:#F4F7FA;}
+.hero .btn-outline:hover{border-color:#E9D98A;color:#E9D98A;}
 
-  .page-stars span.big{width:3px;height:3px;}
+/* HERO STATS */
+.stat-card{
+  flex:0 0 260px;width:260px;
+  border:1px solid rgba(233,217,138,0.35);
+  background:rgba(255,255,255,0.06);backdrop-filter:blur(2px);
+}
+.stat-row{
+  display:flex;flex-direction:column;gap:4px;padding:14px 18px;
+  border-bottom:1px solid rgba(233,217,138,0.2);font-size:.88rem;
+}
+.stat-row:last-child{border-bottom:none;}
+.stat-row .k{color:#B7C3CE;font-size:.78rem;}
+.stat-row .v{font-weight:600;color:#F4F7FA;line-height:1.4;}
 
-  .page-fireflies{
-    position:fixed;
-    inset:0;
-    z-index:-1;
-    pointer-events:none;
-  }
+/* STARS AND FIREFLIES */
+.stars{position:absolute;inset:0;z-index:1;}
+.stars span{
+  position:absolute;width:2px;height:2px;background:#fff;
+  border-radius:50%;opacity:.75;
+  animation:twinkle 3.2s ease-in-out infinite;
+}
+.stars span.big{width:3px;height:3px;}
+.fireflies{position:absolute;inset:0;z-index:1;}
+.fireflies span{
+  position:absolute;width:6px;height:6px;border-radius:50%;
+  background:#E9D98A;
+  box-shadow:0 0 8px 3px rgba(233,217,138,0.7);
+  animation:drift 6s ease-in-out infinite;
+}
 
-  .page-fireflies span{
-    position:absolute;
-    width:6px;
-    height:6px;
-    border-radius:50%;
-    background:#E9D98A;
-    box-shadow:0 0 8px 3px rgba(233,217,138,0.7);
-    animation:drift 6s ease-in-out infinite;
-  }
+/* ANIMATIONS */
+@keyframes twinkle{0%,100%{opacity:.25;}50%{opacity:1;}}
+@keyframes drift{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
+@keyframes wave{
+  0%{transform:rotate(0deg);}
+  10%{transform:rotate(14deg);}
+  20%{transform:rotate(-8deg);}
+  30%{transform:rotate(14deg);}
+  40%{transform:rotate(-4deg);}
+  50%{transform:rotate(10deg);}
+  60%,100%{transform:rotate(0deg);}
+}
 
-  /* NAVIGATION */
-  nav{
-    position:sticky;
-    top:0;
-    z-index:10;
-    background:rgba(15,23,42,0.82);
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--line);
-  }
+/* TREE LINE */
+.treeline{
+  position:absolute;left:0;right:0;bottom:0;height:120px;z-index:1;
+  background:#08131E;
+  clip-path:polygon(0% 100%,0% 55%,4% 60%,8% 40%,12% 58%,17% 45%,22% 62%,28% 48%,33% 65%,39% 50%,45% 63%,52% 44%,58% 60%,64% 46%,70% 63%,76% 50%,82% 62%,88% 47%,93% 60%,97% 52%,100% 60%,100% 100%);
+  opacity:.85;
+}
 
-  nav .wrap{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding-top:16px;
-    padding-bottom:16px;
-  }
+/* SECTION HEADINGS */
+.section-head{display:flex;align-items:baseline;gap:14px;margin-bottom:30px;}
+.section-num{
+  font-family:Arial,Helvetica,sans-serif;color:var(--amber);
+  font-weight:600;font-size:1.3rem;line-height:1;
+}
+.section-head h2{font-size:1.5rem;letter-spacing:-0.01em;}
 
-  nav .brand{
-    font-weight:700;
-    font-size:1.05rem;
-    letter-spacing:-0.01em;
-  }
+/* ABOUT */
+.about-text{max-width:100%;color:var(--ink-soft);font-size:1.02rem;text-align:justify;}
 
-  nav .brand span{color:var(--amber);}
+/* SKILLS */
+.skills-group{margin-bottom:32px;}
+.skills-group:last-child{margin-bottom:0;}
+.skills-cat{
+  display:flex;align-items:center;gap:10px;font-size:1.05rem;
+  font-weight:600;color:var(--ink);margin-bottom:16px;
+}
+.skills-cat .skills-icon{font-size:1.1rem;line-height:1;}
+.skills-badges{display:flex;flex-wrap:wrap;gap:10px;}
+.skills-badges img{height:28px;border-radius:4px;}
 
+/* CERTIFICATIONS */
+.cert-grid{
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;
+  background:var(--line);border:1px solid var(--line);
+}
+.cert{
+  background:var(--paper);padding:22px;display:flex;
+  flex-direction:column;transition:box-shadow .25s ease,transform .25s ease;
+}
+.cert:hover{box-shadow:0 0 22px rgba(99,102,241,0.35);transform:translateY(-3px);}
+.cert-issuer{font-size:.75rem;color:var(--amber);font-weight:600;}
+.cert h3{font-size:1.05rem;margin-top:8px;color:var(--ink);}
+.cert .cert-meta{margin-top:8px;color:var(--ink-soft);font-size:.88rem;}
+.cert .cert-link{margin-top:auto;padding-top:14px;font-size:.85rem;}
+.cert .cert-link a{color:var(--amber);text-decoration:none;font-weight:600;}
+.cert .cert-link a:hover{text-decoration:underline;}
+
+/* EXPERIENCE */
+.job{
+  display:flex;gap:24px;padding:18px 14px;
+  border-bottom:1px solid var(--line);border-radius:8px;
+  transition:box-shadow .25s ease,transform .25s ease,background-color .25s ease;
+}
+.job:hover{box-shadow:0 0 22px rgba(99,102,241,0.35);transform:translateY(-3px);background:rgba(255,255,255,0.03);}
+.job:last-child{border-bottom:none;}
+.job-when{flex:0 0 150px;color:var(--amber);font-family:Arial,Helvetica,sans-serif;font-size:.86rem;font-weight:600;}
+.job-role{font-weight:600;}
+.job-org{color:var(--ink-soft);font-size:.92rem;}
+
+/* NOTES */
+.note{
+  background:transparent;border:1px solid rgba(99,102,241,0.35);
+  padding:12px 16px;font-size:.88rem;color:#A5B4FC;
+  margin-bottom:26px;text-align:justify;
+}
+
+/* PROJECT GRID */
+.proj-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:var(--line);border:1px solid var(--line);
+}
+.proj{
+  background:var(--paper);padding:22px;
+  transition:box-shadow .25s ease,transform .25s ease;
+}
+.proj:hover{box-shadow:0 0 22px rgba(99,102,241,0.35);transform:translateY(-3px);}
+.proj-tag{font-size:.75rem;color:var(--amber);font-weight:600;font-family:Arial,Helvetica,sans-serif;}
+.proj h3{font-size:1.05rem;margin-top:8px;color:var(--ink);}
+.proj p{color:var(--ink-soft);font-size:.92rem;margin-top:8px;text-align:justify;}
+.proj .stack{margin-top:12px;font-size:.8rem;color:var(--ink-soft);}
+
+/* PROJECT CARD GRID */
+.module-label{
+  font-family:Arial,Helvetica,sans-serif;font-size:.82rem;
+  color:var(--amber);font-weight:600;letter-spacing:.01em;margin-bottom:20px;
+}
+.card-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;}
+.card{padding:4px;transition:box-shadow .25s ease,transform .25s ease;}
+.card:hover{box-shadow:0 0 22px rgba(99,102,241,0.35);transform:translateY(-3px);}
+.card-thumb{
+  display:block;border-radius:10px;overflow:hidden;
+  aspect-ratio:16/10;background:#0B1B2B;
+  border:1px solid var(--line);margin-bottom:16px;
+}
+.card-thumb img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .3s ease;
+}
+.card:hover .card-thumb img{transform:scale(1.04);}
+.card h3{font-size:1.1rem;color:var(--ink);margin-bottom:8px;}
+.card p{color:var(--ink-soft);font-size:.92rem;text-align:justify;}
+.card .stack{margin-top:12px;font-size:.85rem;}
+.card .stack a{color:var(--amber);text-decoration:none;font-weight:600;}
+.card .stack a:hover{text-decoration:underline;}
+
+/* FEATURED PROJECTS (LEGACY, UNUSED) */
+.proj-featured{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border:1px solid var(--line);background:var(--paper);
+  transition:box-shadow .25s ease,transform .25s ease;
+  overflow:hidden;margin-bottom:1px;
+}
+.proj-featured:hover{box-shadow:0 0 22px rgba(99,102,241,0.35);transform:translateY(-3px);}
+.proj-featured-text{padding:26px;display:flex;flex-direction:column;justify-content:center;}
+.proj-featured-text .proj-tag{font-size:.75rem;color:var(--amber);font-weight:600;font-family:Arial,Helvetica,sans-serif;}
+.proj-featured-text h3{font-size:1.15rem;margin-top:8px;color:var(--ink);}
+.proj-featured-text p{color:var(--ink-soft);font-size:.92rem;margin-top:8px;text-align:justify;}
+.proj-featured-text .stack{margin-top:12px;font-size:.8rem;color:var(--ink-soft);}
+.proj-featured-text .stack a{color:var(--amber);text-decoration:none;font-weight:600;}
+.proj-featured-text .stack a:hover{text-decoration:underline;}
+.proj-featured-thumb{
+  display:block;min-height:280px;background:#0B1B2B;
+  border-left:1px solid var(--line);overflow:hidden;
+}
+.proj-featured-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+
+/* EDUCATION */
+.edu{
+  display:flex;justify-content:space-between;gap:20px;
+  padding:14px;border-bottom:1px solid var(--line);
+  border-radius:8px;
+  transition:box-shadow .25s ease,transform .25s ease,background-color .25s ease;
+}
+.edu:hover{box-shadow:0 0 22px rgba(99,102,241,0.35);transform:translateY(-3px);background:rgba(255,255,255,0.03);}
+.edu:last-child{border-bottom:none;}
+.edu-left .school{font-weight:600;}
+.edu-left .prog{color:var(--ink-soft);font-size:.92rem;}
+.edu-right{white-space:nowrap;color:var(--ink-soft);font-size:.9rem;text-align:right;}
+
+/* CONTACT */
+.contact-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);}
+.contact-list a{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:16px 18px;text-decoration:none;border-bottom:1px solid var(--line);
+  background:transparent;position:relative;z-index:1;
+  transition:box-shadow .25s ease,background-color .25s ease,transform .25s ease;
+}
+.contact-list a:hover{box-shadow:0 0 22px rgba(99,102,241,0.35);transform:translateY(-3px);background:rgba(99,102,241,0.1);}
+.contact-list a:last-child{border-bottom:none;}
+.contact-list .label{font-weight:600;color:var(--ink);}
+.contact-list .arrow{color:var(--amber);font-family:Arial,Helvetica,sans-serif;}
+
+/* FOOTER */
+footer{padding:30px 0 50px;color:var(--ink-soft);font-size:.85rem;}
+
+/* DESKTOP */
+@media(min-width:900px){
+  .stat-card{position:absolute;top:-8px;right:0;}
+  .hero-main{padding-right:290px;}
+}
+
+/* TABLET */
+@media(max-width:899px) and (min-width:641px){
+  .cert-grid{grid-template-columns:1fr 1fr;}
+  .card-grid{grid-template-columns:1fr 1fr;}
+}
+
+/* MOBILE */
+@media(max-width:640px){
+  .hero-row{justify-content:center;text-align:center;}
+  .hero-sub{margin-left:auto;margin-right:auto;text-align:justify;}
+  .hero-actions{justify-content:center;}
+  .hero-badges{justify-content:center;}
   nav ul{
-    list-style:none;
-    display:flex;
-    gap:26px;
-    margin:0;
-    padding:0;
+    position:absolute;top:100%;left:0;right:0;background:var(--paper);
+    flex-direction:column;gap:0;border-bottom:1px solid var(--line);
+    max-height:0;overflow:hidden;transition:max-height .25s ease;
   }
-
-  nav a{
-    text-decoration:none;
-    font-size:0.92rem;
-    color:#C7D3DE;
-    font-weight:500;
-  }
-
-  nav a:hover{color:var(--amber);}
-
-  .nav-toggle{
-    display:none;
-    background:none;
-    border:none;
-    font-size:1.5rem;
-    cursor:pointer;
-    color:var(--ink);
-  }
-
-  .nav-right{display:flex;align-items:center;}
-
-  /* GENERAL LAYOUT */
-  .wrap{
-    max-width:var(--max);
-    margin:0 auto;
-    padding:0 28px;
-  }
-
-  section{
-    padding:56px 0;
-    border-top:1px solid var(--line);
-  }
-
-  /* HERO */
-  header.hero{
-    padding:48px 0 80px;
-    position:relative;
-    overflow:hidden;
-    background:
-      radial-gradient(circle at 82% 18%,rgba(255,247,214,0.9) 0%,rgba(255,247,214,0.5) 3%,rgba(255,236,170,0.12) 7%,transparent 10%),
-      linear-gradient(180deg,#0B1B2B 0%,#12283D 45%,#1B3A52 78%,#234A63 100%);
-    color:#F4F7FA;
-  }
-
-  header.hero .wrap{position:relative;z-index:2;}
-
-  .hero-row{
-    display:flex;
-    gap:40px;
-    flex-wrap:wrap;
-    align-items:flex-start;
-    position:relative;
-  }
-
-  .hero-main{flex:1 1 380px;}
-
-  .kicker{
-    font-family:Arial, Helvetica, sans-serif;
-    font-size:0.85rem;
-    color:#E9D98A;
-    font-weight:600;
-    margin-bottom:10px;
-  }
-
-  .hero h1{
-    font-size:2.6rem;
-    line-height:1.12;
-    letter-spacing:-0.02em;
-    color:#F4F7FA;
-  }
-
-  .hero h1 .wave{
-    display:inline-block;
-    animation:wave 2.1s ease-in-out infinite;
-    transform-origin:70% 70%;
-  }
-
-  .hero-sub{
-    margin-top:14px;
-    font-size:1.08rem;
-    color:#C7D3DE;
-    max-width:52ch;
-    text-align:justify;
-  }
-
-  .hero-badges{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:16px;
-  }
-
-  .hero-badges img{height:28px;border-radius:4px;}
-
-  .hero-actions{
-    margin-top:26px;
-    display:flex;
-    gap:14px;
-    flex-wrap:wrap;
-  }
-
-  .photo-frame{
-    flex:0 0 170px;
-    width:170px;
-    height:170px;
-    border-radius:50%;
-    border:3px solid #E9D98A;
-    box-shadow:0 0 0 8px rgba(233,217,138,0.15),0 0 0 9px rgba(233,217,138,0.35),0 14px 34px rgba(0,0,0,0.5);
-    overflow:hidden;
-    background:#0B1B2B;
-  }
-
-  .photo-frame img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-  }
-
-  .btn{
-    display:inline-block;
-    padding:11px 22px;
-    border-radius:2px;
-    text-decoration:none;
-    font-weight:600;
-    font-size:0.92rem;
-    border:1px solid var(--ink);
-  }
-
-  .btn-solid{background:var(--ink);color:var(--white);}
-  .btn-solid:hover{background:var(--amber);border-color:var(--amber);color:var(--ink);}
-  .btn-outline{border-color:var(--line);color:var(--ink);}
-  .btn-outline:hover{border-color:var(--ink);}
-  .hero .btn-solid{background:#E9D98A;color:#0B1B2B;border-color:#E9D98A;}
-  .hero .btn-solid:hover{background:#F4E9B8;}
-  .hero .btn-outline{border-color:rgba(244,247,250,0.4);color:#F4F7FA;}
-  .hero .btn-outline:hover{border-color:#E9D98A;color:#E9D98A;}
-
-  /* HERO STATS */
-  .stat-card{
-    flex:0 0 260px;
-    width:260px;
-    border:1px solid rgba(233,217,138,0.35);
-    background:rgba(255,255,255,0.06);
-    backdrop-filter:blur(2px);
-  }
-
-  .stat-row{
-    display:flex;
-    flex-direction:column;
-    gap:4px;
-    padding:14px 18px;
-    border-bottom:1px solid rgba(233,217,138,0.2);
-    font-size:0.88rem;
-  }
-
-  .stat-row:last-child{border-bottom:none;}
-  .stat-row .k{color:#B7C3CE;font-size:0.78rem;}
-  .stat-row .v{font-weight:600;color:#F4F7FA;line-height:1.4;}
-
-  /* STARS */
-  .stars{position:absolute;inset:0;z-index:1;}
-
-  .stars span{
-    position:absolute;
-    width:2px;
-    height:2px;
-    background:#fff;
-    border-radius:50%;
-    opacity:.75;
-    animation:twinkle 3.2s ease-in-out infinite;
-  }
-
-  .stars span.big{width:3px;height:3px;}
-
-  .fireflies{position:absolute;inset:0;z-index:1;}
-
-  .fireflies span{
-    position:absolute;
-    width:6px;
-    height:6px;
-    border-radius:50%;
-    background:#E9D98A;
-    box-shadow:0 0 8px 3px rgba(233,217,138,0.7);
-    animation:drift 6s ease-in-out infinite;
-  }
-
-  /* ANIMATIONS */
-  @keyframes twinkle{
-    0%,100%{opacity:.25;}
-    50%{opacity:1;}
-  }
-
-  @keyframes drift{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-14px);}
-  }
-
-  @keyframes wave{
-    0%{transform:rotate(0deg);}
-    10%{transform:rotate(14deg);}
-    20%{transform:rotate(-8deg);}
-    30%{transform:rotate(14deg);}
-    40%{transform:rotate(-4deg);}
-    50%{transform:rotate(10deg);}
-    60%,100%{transform:rotate(0deg);}
-  }
-
-  /* TREE LINE */
-  .treeline{
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-    height:120px;
-    z-index:1;
-    background:#08131E;
-    clip-path:polygon(0% 100%,0% 55%,4% 60%,8% 40%,12% 58%,17% 45%,22% 62%,28% 48%,33% 65%,39% 50%,45% 63%,52% 44%,58% 60%,64% 46%,70% 63%,76% 50%,82% 62%,88% 47%,93% 60%,97% 52%,100% 60%,100% 100%);
-    opacity:0.85;
-  }
-
-  /* SECTION HEADINGS */
-  .section-head{
-    display:flex;
-    align-items:baseline;
-    gap:14px;
-    margin-bottom:30px;
-  }
-
-  .section-num{
-    font-family:Arial, Helvetica, sans-serif;
-    color:var(--amber);
-    font-weight:600;
-    font-size:1.3rem;
-    line-height:1;
-  }
-
-  .section-head h2{font-size:1.5rem;letter-spacing:-0.01em;}
-
-  /* ABOUT */
-  .about-text{
-    max-width:100%;
-    color:var(--ink-soft);
-    font-size:1.02rem;
-    text-align:justify;
-  }
-
-  /* SKILLS */
-  .skills-group{margin-bottom:32px;}
-  .skills-group:last-child{margin-bottom:0;}
-
-  .skills-cat{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-size:1.05rem;
-    font-weight:600;
-    color:var(--ink);
-    margin-bottom:16px;
-  }
-
-  .skills-cat .skills-icon{font-size:1.1rem;line-height:1;}
-
-  .skills-badges{display:flex;flex-wrap:wrap;gap:10px;}
-  .skills-badges img{height:28px;border-radius:4px;}
-
-  /* CERTIFICATIONS */
-  .cert-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr 1fr;
-    gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
-  }
-
-  .cert{
-    background:var(--paper);
-    padding:22px;
-    display:flex;
-    flex-direction:column;
-    transition:box-shadow .25s ease,transform .25s ease;
-  }
-
-  .cert:hover{box-shadow:0 0 22px rgba(99,102,241,0.35);transform:translateY(-3px);}
-  .cert-issuer{font-size:0.75rem;color:var(--amber);font-weight:600;}
-  .cert h3{font-size:1.05rem;margin-top:8px;color:var(--ink);}
-  .cert .cert-meta{margin-top:8px;color:var(--ink-soft);font-size:0.88rem;}
-  .cert .cert-link{margin-top:auto;padding-top:14px;font-size:0.85rem;}
-  .cert .cert-link a{color:var(--amber);text-decoration:none;font-weight:600;}
-  .cert .cert-link a:hover{text-decoration:underline;}
-
-  @media (max-width:899px) and (min-width:641px){
-    .cert-grid{grid-template-columns:1fr 1fr;}
-  }
-
-  @media (max-width:640px){
-    .cert-grid{grid-template-columns:1fr;}
-  }
-
-  /* EXPERIENCE */
-  .job{
-    display:flex;
-    gap:24px;
-    padding:18px 14px;
-    border-bottom:1px solid var(--line);
-    border-radius:8px;
-    transition:box-shadow .25s ease,transform .25s ease,background-color .25s ease;
-  }
-
-  .job:hover{box-shadow:0 0 22px rgba(99,102,241,0.35);transform:translateY(-3px);background:rgba(255,255,255,0.03);}
-  .job:last-child{border-bottom:none;}
-  .job-when{flex:0 0 150px;color:var(--amber);font-family:Arial, Helvetica, sans-serif;font-size:0.86rem;font-weight:600;}
-  .job-role{font-weight:600;}
-  .job-org{color:var(--ink-soft);font-size:0.92rem;}
-
-  /* NOTES */
-  .note{
-    background:transparent;
-    border:1px solid rgba(99,102,241,0.35);
-    padding:12px 16px;
-    font-size:0.88rem;
-    color:#A5B4FC;
-    margin-bottom:26px;
-    text-align:justify;
-  }
-
-  /* PROJECT GRID */
-  .proj-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
-  }
-
-  .proj{
-    background:var(--paper);
-    padding:22px;
-    transition:box-shadow .25s ease,transform .25s ease;
-  }
-
-  .proj:hover{box-shadow:0 0 22px rgba(99,102,241,0.35);transform:translateY(-3px);}
-  .proj-tag{font-size:0.75rem;color:var(--amber);font-weight:600;font-family:Arial, Helvetica, sans-serif;}
-  .proj h3{font-size:1.05rem;margin-top:8px;color:var(--ink);}
-
-  .proj p{
-    color:var(--ink-soft);
-    font-size:0.92rem;
-    margin-top:8px;
-    text-align:justify;
-  }
-
-  .proj .stack{margin-top:12px;font-size:0.8rem;color:var(--ink-soft);}
-
-  /* PROJECT CARD GRID */
-  .module-label{
-    font-family:Arial, Helvetica, sans-serif;
-    font-size:0.82rem;
-    color:var(--amber);
-    font-weight:600;
-    letter-spacing:0.01em;
-    margin-bottom:20px;
-  }
-
-  .card-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;}
-  .card{padding:4px;transition:box-shadow .25s ease,transform .25s ease;}
-  .card:hover{box-shadow:0 0 22px rgba(99,102,241,0.35);transform:translateY(-3px);}
-
-  .card-thumb{
-    display:block;
-    border-radius:10px;
-    overflow:hidden;
-    aspect-ratio:16/10;
-    background:#0B1B2B;
-    border:1px solid var(--line);
-    margin-bottom:16px;
-  }
-
-  .card-thumb img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-    transition:transform .3s ease;
-  }
-
-  .card:hover .card-thumb img{transform:scale(1.04);}
-  .card h3{font-size:1.1rem;color:var(--ink);margin-bottom:8px;}
-
-  .card p{
-    color:var(--ink-soft);
-    font-size:0.92rem;
-    text-align:justify;
-  }
-
-  .card .stack{margin-top:12px;font-size:0.85rem;}
-  .card .stack a{color:var(--amber);text-decoration:none;font-weight:600;}
-  .card .stack a:hover{text-decoration:underline;}
-
-  /* FEATURED PROJECTS (legacy, unused) */
-  .proj-featured{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:0;
-    border:1px solid var(--line);
-    background:var(--paper);
-    transition:box-shadow .25s ease,transform .25s ease;
-    overflow:hidden;
-    margin-bottom:1px;
-  }
-
-  .proj-featured:hover{box-shadow:0 0 22px rgba(99,102,241,0.35);transform:translateY(-3px);}
-
-  .proj-featured-text{
-    padding:26px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-  }
-
-  .proj-featured-text .proj-tag{font-size:0.75rem;color:var(--amber);font-weight:600;font-family:Arial, Helvetica, sans-serif;}
-  .proj-featured-text h3{font-size:1.15rem;margin-top:8px;color:var(--ink);}
-
-  .proj-featured-text p{
-    color:var(--ink-soft);
-    font-size:0.92rem;
-    margin-top:8px;
-    text-align:justify;
-  }
-
-  .proj-featured-text .stack{margin-top:12px;font-size:0.8rem;color:var(--ink-soft);}
-  .proj-featured-text .stack a{color:var(--amber);text-decoration:none;font-weight:600;}
-  .proj-featured-text .stack a:hover{text-decoration:underline;}
-
-  .proj-featured-thumb{
-    display:block;
-    min-height:280px;
-    background:#0B1B2B;
-    border-left:1px solid var(--line);
-    overflow:hidden;
-  }
-
-  .proj-featured-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
-
-  /* EDUCATION */
-  .edu{
-    display:flex;
-    justify-content:space-between;
-    gap:20px;
-    padding:14px;
-    border-bottom:1px solid var(--line);
-    border-radius:8px;
-    transition:box-shadow .25s ease,transform .25s ease,background-color .25s ease;
-  }
-
-  .edu:hover{box-shadow:0 0 22px rgba(99,102,241,0.35);transform:translateY(-3px);background:rgba(255,255,255,0.03);}
-  .edu:last-child{border-bottom:none;}
-  .edu-left .school{font-weight:600;}
-  .edu-left .prog{color:var(--ink-soft);font-size:0.92rem;}
-  .edu-right{white-space:nowrap;color:var(--ink-soft);font-size:0.9rem;text-align:right;}
-
-  /* CONTACT */
-  .contact-list{
-    display:flex;
-    flex-direction:column;
-    gap:0;
-    border:1px solid var(--line);
-  }
-
-  .contact-list a{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:16px 18px;
-    text-decoration:none;
-    border-bottom:1px solid var(--line);
-    background:transparent;
-    position:relative;
-    z-index:1;
-    transition:box-shadow .25s ease,background-color .25s ease,transform .25s ease;
-  }
-
-  .contact-list a:hover{box-shadow:0 0 22px rgba(99,102,241,0.35);transform:translateY(-3px);background:rgba(99,102,241,0.1);}
-  .contact-list a:last-child{border-bottom:none;}
-  .contact-list .label{font-weight:600;color:var(--ink);}
-  .contact-list .arrow{color:var(--amber);font-family:Arial, Helvetica, sans-serif;}
-
-  /* FOOTER */
-  footer{padding:30px 0 50px;color:var(--ink-soft);font-size:0.85rem;}
-
-  /* DESKTOP */
-  @media (min-width:900px){
-    .stat-card{position:absolute;top:-8px;right:0;}
-    .hero-main{padding-right:290px;}
-  }
-
-  @media (max-width:899px) and (min-width:641px){
-    .card-grid{grid-template-columns:1fr 1fr;}
-  }
-
-  /* MOBILE */
-  @media (max-width:640px){
-    .hero-row{justify-content:center;text-align:center;}
-    .hero-sub{margin-left:auto;margin-right:auto;text-align:justify;}
-    .hero-actions{justify-content:center;}
-    .hero-badges{justify-content:center;}
-
-    nav ul{
-      position:absolute;
-      top:100%;
-      left:0;
-      right:0;
-      background:var(--paper);
-      flex-direction:column;
-      gap:0;
-      border-bottom:1px solid var(--line);
-      max-height:0;
-      overflow:hidden;
-      transition:max-height .25s ease;
-    }
-
-    nav ul.open{max-height:360px;}
-    nav ul li{border-top:1px solid var(--line);}
-    nav ul a{display:block;padding:14px 28px;}
-    .nav-toggle{display:block;}
-    .nav-right{order:2;}
-    .proj-grid{grid-template-columns:1fr;}
-    .card-grid{grid-template-columns:1fr;}
-    .proj-featured{grid-template-columns:1fr;}
-    .proj-featured-thumb{border-left:none;border-top:1px solid var(--line);min-height:220px;}
-    .proj-featured-thumb img{min-height:220px;}
-    .job{flex-direction:column;gap:4px;}
-    .job-when{flex:initial;}
-    .edu{flex-direction:column;gap:8px;}
-    .edu-right{text-align:left;white-space:normal;}
-    .contact-list a{gap:15px;}
-    .contact-list .arrow{text-align:right;word-break:break-word;}
-  }
+  nav ul.open{max-height:360px;}
+  nav ul li{border-top:1px solid var(--line);}
+  nav ul a{display:block;padding:14px 28px;}
+  .nav-toggle{display:block;}
+  .nav-right{order:2;}
+  .cert-grid{grid-template-columns:1fr;}
+  .proj-grid{grid-template-columns:1fr;}
+  .card-grid{grid-template-columns:1fr;}
+  .proj-featured{grid-template-columns:1fr;}
+  .proj-featured-thumb{border-left:none;border-top:1px solid var(--line);min-height:220px;}
+  .proj-featured-thumb img{min-height:220px;}
+  .job{flex-direction:column;gap:4px;}
+  .job-when{flex:initial;}
+  .edu{flex-direction:column;gap:8px;}
+  .edu-right{text-align:left;white-space:normal;}
+  .contact-list a{gap:15px;}
+  .contact-list .arrow{text-align:right;word-break:break-word;}
+}
 </style>
 </head>
 
@@ -660,7 +380,6 @@
 <nav>
   <div class="wrap">
     <div class="brand">Jeisa<span>.</span>Mathew</div>
-
     <ul id="navMenu">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -670,7 +389,6 @@
       <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-
     <div class="nav-right">
       <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
     </div>
@@ -689,7 +407,6 @@
 
     <div class="hero-main">
       <div class="kicker">AVAILABLE FOR OPPORTUNITIES</div>
-
       <h1><span class="wave">👋</span> Hi, I'm Jeisa Mathew</h1>
 
       <div class="hero-badges">
@@ -714,23 +431,19 @@
       </div>
     </div>
 
-    <!-- HERO INFO CARD -->
     <div class="stat-card">
       <div class="stat-row">
         <span class="k">Degree</span>
         <span class="v">B.E. CSE</span>
       </div>
-
       <div class="stat-row">
         <span class="k">Core tools</span>
         <span class="v">SQL + Python</span>
       </div>
-
       <div class="stat-row">
         <span class="k">BI tools</span>
         <span class="v">Power BI + Tableau</span>
       </div>
-
       <div class="stat-row">
         <span class="k">Currently</span>
         <span class="v">Advanced Certificate in Data Science (upGrad) — Excel, Power BI/Tableau, SQL, Python, Statistics, AI & Machine Learning</span>
@@ -746,7 +459,6 @@
       <span class="section-num">👤</span>
       <h2>About</h2>
     </div>
-
     <p class="about-text">
       I completed my B.E. in Computer Science & Engineering from Jain College of Engineering and Technology, Hubballi (VTU).
       Alongside hands-on work experience at Infosys and Tech Mahindra, I'm now focused on building a career as a Tableau Developer and Data Analyst — working with SQL and Python for analysis, and Power BI / Tableau for visualization.
@@ -815,54 +527,42 @@
         <div class="cert-issuer">HackerRank</div>
         <h3>Python (Basic) Certificate</h3>
         <div class="cert-meta">Python · Issued Nov 2026</div>
-        <div class="cert-link">
-          <a href="HackerRank%20-%20Python%20(Basic)_certificate.pdf" target="_blank">View certificate →</a>
-        </div>
+        <div class="cert-link"><a href="HackerRank%20-%20Python%20(Basic)_certificate.pdf" target="_blank">View certificate →</a></div>
       </div>
 
       <div class="cert">
         <div class="cert-issuer">LeetCode</div>
         <h3>Data Navigator Badge</h3>
         <div class="cert-meta">MySQL · Issued Oct 2026</div>
-        <div class="cert-link">
-          <a href="Data%20Navigator%20Badge%20-%20Leetcode.png" target="_blank">View badge →</a>
-        </div>
+        <div class="cert-link"><a href="Data%20Navigator%20Badge%20-%20Leetcode.png" target="_blank">View badge →</a></div>
       </div>
 
       <div class="cert">
         <div class="cert-issuer">HackerRank</div>
         <h3>SQL (Advanced) Certificate</h3>
         <div class="cert-meta">SQL · Issued Oct 2026</div>
-        <div class="cert-link">
-          <a href="HackerRank%20-%20sql_advanced%20certificate.pdf" target="_blank">View certificate →</a>
-        </div>
+        <div class="cert-link"><a href="HackerRank%20-%20sql_advanced%20certificate.pdf" target="_blank">View certificate →</a></div>
       </div>
 
       <div class="cert">
         <div class="cert-issuer">HackerRank</div>
         <h3>SQL (Intermediate) Certificate</h3>
         <div class="cert-meta">SQL · Issued Sep 2026</div>
-        <div class="cert-link">
-          <a href="HackerRank%20-%20sql_intermediate%20certificate.pdf" target="_blank">View certificate →</a>
-        </div>
+        <div class="cert-link"><a href="HackerRank%20-%20sql_intermediate%20certificate.pdf" target="_blank">View certificate →</a></div>
       </div>
 
       <div class="cert">
         <div class="cert-issuer">HackerRank</div>
         <h3>SQL (Basic) Certificate</h3>
         <div class="cert-meta">SQL · Issued Sep 2026</div>
-        <div class="cert-link">
-          <a href="HackerRank%20-%20sql_basic%20certificate.pdf" target="_blank">View certificate →</a>
-        </div>
+        <div class="cert-link"><a href="HackerRank%20-%20sql_basic%20certificate.pdf" target="_blank">View certificate →</a></div>
       </div>
 
       <div class="cert">
         <div class="cert-issuer">upGrad</div>
         <h3>Data Visualisation with Tableau</h3>
         <div class="cert-meta">Tableau · Issued Jul 2026</div>
-        <div class="cert-link">
-          <a href="Data%20Visualisation%20with%20Tableau-certificate.jpeg" target="_blank">View certificate →</a>
-        </div>
+        <div class="cert-link"><a href="Data%20Visualisation%20with%20Tableau-certificate.jpeg" target="_blank">View certificate →</a></div>
       </div>
 
       <div class="cert">
@@ -934,138 +634,99 @@
     <div class="module-label">Module 1 · Excel & GenAI for Analytics</div>
 
     <div class="card-grid">
-      <!-- EXCEL CASE STUDIES CARD -->
       <div class="card">
         <a class="card-thumb" href="https://github.com/JEISAMATHEW/Excel-Business-Analysis-Case-Studies" target="_blank">
           <img src="https://raw.githubusercontent.com/JEISAMATHEW/Excel-Business-Analysis-Case-Studies/main/Gantt_Chart_Output.png" alt="Excel Business Analysis Case Studies screenshot">
         </a>
         <h3>Project-1 . Excel Business Analysis – Practical Case Studies</h3>
         <p>Four practical Excel case studies covering Gantt Charts, Sales Forecasting, What-If Analysis, and Scenario Comparison — simulating the real decision-making workflow of a Business Analyst.</p>
-        <div class="stack">
-          <a href="https://github.com/JEISAMATHEW/Excel-Business-Analysis-Case-Studies" target="_blank">View on GitHub →</a>
-        </div>
+        <div class="stack"><a href="https://github.com/JEISAMATHEW/Excel-Business-Analysis-Case-Studies" target="_blank">View on GitHub →</a></div>
       </div>
 
-      <!-- RETAILNOW GENAI CASE STUDY CARD -->
       <div class="card">
         <a class="card-thumb" href="https://github.com/JEISAMATHEW/RetailNow-GenAI-Sales-Case-Study" target="_blank">
           <img src="https://raw.githubusercontent.com/JEISAMATHEW/RetailNow-GenAI-Sales-Case-Study/main/Gen%20AI%20Case%20Study%20-%20Retail%20Sales%20Dashboard.png" alt="RetailNow GenAI Sales Dashboard screenshot">
         </a>
         <h3>Project-2 . RetailNow – From Messy Data to Business Decisions</h3>
         <p>Cleaned a messy 415-row retail sales export in Excel, then used Generative AI as an analysis partner to turn pivot tables and charts into a board-ready business insights report with concrete recommendations.</p>
-        <div class="stack">
-          <a href="https://github.com/JEISAMATHEW/RetailNow-GenAI-Sales-Case-Study" target="_blank">View on GitHub →</a>
-        </div>
+        <div class="stack"><a href="https://github.com/JEISAMATHEW/RetailNow-GenAI-Sales-Case-Study" target="_blank">View on GitHub →</a></div>
       </div>
 
-      <!-- EV DASHBOARD CARD -->
       <div class="card">
         <a class="card-thumb" href="https://github.com/JEISAMATHEW/EV_Recommendation_Dashboard" target="_blank">
           <img src="https://raw.githubusercontent.com/JEISAMATHEW/EV_Recommendation_Dashboard/main/ev_charging_pink_theme.jpg" alt="EV Charging Recommendation Dashboard screenshot">
         </a>
         <h3>Project-3 . EV Charging Recommendation Dashboard</h3>
         <p>An interactive Excel dashboard recommending the optimal EV charging station using a weighted score across distance, queue length, and battery level, built on a cleaned dataset of 1,100+ stations.</p>
-        <div class="stack">
-          <a href="https://github.com/JEISAMATHEW/EV_Recommendation_Dashboard" target="_blank">View on GitHub →</a>
-        </div>
+        <div class="stack"><a href="https://github.com/JEISAMATHEW/EV_Recommendation_Dashboard" target="_blank">View on GitHub →</a></div>
       </div>
     </div>
 
     <div class="module-label" style="margin-top:36px;">Module 2 · Power BI & Tableau</div>
 
     <div class="card-grid">
-      <!-- GREENFIELD SCHOOL POWER BI DASHBOARD CARD -->
       <div class="card">
         <a class="card-thumb" href="https://github.com/JEISAMATHEW/Greenfield-School-PowerBI-Dashboard" target="_blank">
           <img src="https://raw.githubusercontent.com/JEISAMATHEW/Greenfield-School-PowerBI-Dashboard/main/Greenfield_School_Dashboard.png" alt="Greenfield High School Power BI Dashboard screenshot">
         </a>
         <h3>Project-4 . Greenfield High School – Power BI Data Modeling</h3>
         <p>Modeled a related 4-table school dataset in Power BI (students, marks, attendance, fees) and built calculated columns, DAX measures, and calculated tables to power a KPI dashboard on academic and fee performance.</p>
-        <div class="stack">
-          <a href="https://github.com/JEISAMATHEW/Greenfield-School-PowerBI-Dashboard" target="_blank">View on GitHub →</a>
-        </div>
+        <div class="stack"><a href="https://github.com/JEISAMATHEW/Greenfield-School-PowerBI-Dashboard" target="_blank">View on GitHub →</a></div>
       </div>
 
-      <!-- UBER RIDE BOOKINGS TABLEAU DASHBOARD CARD -->
       <div class="card">
         <a class="card-thumb" href="https://github.com/JEISAMATHEW/Uber-Data-Analysis-Tableau-Dashboard" target="_blank">
           <img src="https://raw.githubusercontent.com/JEISAMATHEW/Uber-Data-Analysis-Tableau-Dashboard/main/Uber_Dataset_Analysis_Dashboard.png" alt="Uber Ride Bookings Tableau Dashboard screenshot">
         </a>
         <h3>Project-5 . Uber Ride Bookings – Data Analysis Dashboard</h3>
         <p>Cleaned a raw 150,000-row NCR ride-bookings export down to 148,767 records, geocoded every pickup/drop location, and built a multi-tab Tableau story covering bookings, vehicle mix, revenue, cancellations, and ratings.</p>
-        <div class="stack">
-          <a href="https://github.com/JEISAMATHEW/Uber-Data-Analysis-Tableau-Dashboard" target="_blank">View on GitHub →</a>
-        </div>
+        <div class="stack"><a href="https://github.com/JEISAMATHEW/Uber-Data-Analysis-Tableau-Dashboard" target="_blank">View on GitHub →</a></div>
       </div>
 
-      <!-- RETAIL INVENTORY FORECAST DASHBOARD CARD -->
       <div class="card">
         <a class="card-thumb" href="https://github.com/JEISAMATHEW/Retail-inventory-forecast-dashboard" target="_blank">
           <img src="https://raw.githubusercontent.com/JEISAMATHEW/Retail-inventory-forecast-dashboard/main/Retail-Inventory-Forecast-Dashboard(1).jpg" alt="Retail Inventory Forecast Dashboard screenshot">
         </a>
         <h3>Project-6 . Retail Inventory Forecast Dashboard</h3>
         <p>Forecasted SKU-level demand across 5 stores and 20 SKUs from a 76,000-row dataset, cleaned and validated in Excel Power Query, then built calculated fields, inventory-risk classification, and a two-tab Tableau dashboard that flags stockout and overstock risk and recommends reorder, transfer, or hold actions.</p>
-        <div class="stack">
-          <a href="https://github.com/JEISAMATHEW/Retail-inventory-forecast-dashboard" target="_blank">View on GitHub →</a>
-        </div>
+        <div class="stack"><a href="https://github.com/JEISAMATHEW/Retail-inventory-forecast-dashboard" target="_blank">View on GitHub →</a></div>
       </div>
     </div>
 
     <div class="module-label" style="margin-top:36px;">Module 3 · SQL (with Cloud Integration)</div>
 
     <div class="card-grid">
-      <!-- PMFBY FARMERS INSURANCE SQL ANALYSIS CARD -->
       <div class="card">
         <a class="card-thumb" href="https://github.com/JEISAMATHEW/PMFBY-Farmers-Insurance-SQL-Analysis" target="_blank">
           <img src="https://raw.githubusercontent.com/JEISAMATHEW/PMFBY-Farmers-Insurance-SQL-Analysis/main/schema.png" alt="PMFBY Farmers Insurance SQL Analysis screenshot">
         </a>
         <h3>Project-7 . PMFBY Farmers Insurance – SQL Analysis</h3>
         <p>Loaded 1,870 district-level records from NITI Aayog's NDAP crop insurance data into MySQL with NULL-safe cleaning, then wrote 26 queries on farmer coverage, premiums and population using aggregation, joins, subqueries and top-N analysis.</p>
-        <div class="stack">
-          <a href="https://github.com/JEISAMATHEW/PMFBY-Farmers-Insurance-SQL-Analysis" target="_blank">View on GitHub →</a>
-        </div>
+        <div class="stack"><a href="https://github.com/JEISAMATHEW/PMFBY-Farmers-Insurance-SQL-Analysis" target="_blank">View on GitHub →</a></div>
       </div>
 
-      <!-- PROJECT 8: MYNTRA E-COMMERCE SQL ANALYSIS CARD -->
+      <!-- PROJECT 8: MYNTRA E-COMMERCE SQL ANALYSIS -->
       <div class="card">
-        <a
-          class="card-thumb"
-          href="https://github.com/JEISAMATHEW/Myntra-Ecommerce-SQL-Analysis"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="View Myntra E-commerce SQL Analysis on GitHub">
-
-          <div style="
-            width:100%;
-            height:100%;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            gap:10px;
-            background:linear-gradient(135deg,#172554,#1E40AF,#4479A1);
-            color:#FFFFFF;
-            text-align:center;
-          ">
-            <span style="font-size:2rem;font-weight:700;letter-spacing:2px;">SQL</span>
-            <span style="font-size:0.9rem;font-weight:600;letter-spacing:1px;">E-COMMERCE ANALYSIS</span>
-            <span style="font-size:0.75rem;color:#DBEAFE;">MySQL · 17 Query Sections</span>
-          </div>
+        <a class="card-thumb"
+           href="https://github.com/JEISAMATHEW/Myntra-Ecommerce-SQL-Analysis"
+           target="_blank"
+           rel="noopener noreferrer">
+          <img
+            src="https://raw.githubusercontent.com/JEISAMATHEW/Myntra-Ecommerce-SQL-Analysis/main/schema.png"
+            alt="Myntra E-commerce SQL database schema">
         </a>
-
         <h3>Project-8 . Myntra E-commerce – SQL Analysis</h3>
-
         <p>
-          Built a self-designed, Myntra-inspired e-commerce database in MySQL, then developed 17 query sections covering customer and product analysis, sales trends, product profitability, employee performance and business KPIs using joins, subqueries, CTEs, window functions, views and stored procedures.
+          Built a self-designed, Myntra-inspired e-commerce database in MySQL,
+          then developed 17 query sections covering customer and product
+          analysis, sales trends, product profitability, employee performance
+          and business KPIs using joins, subqueries, CTEs, window functions,
+          views and stored procedures.
         </p>
-
         <div class="stack">
-          <a
-            href="https://github.com/JEISAMATHEW/Myntra-Ecommerce-SQL-Analysis"
-            target="_blank"
-            rel="noopener noreferrer">
-            View on GitHub →
-          </a>
+          <a href="https://github.com/JEISAMATHEW/Myntra-Ecommerce-SQL-Analysis"
+             target="_blank"
+             rel="noopener noreferrer">View on GitHub →</a>
         </div>
       </div>
     </div>
@@ -1194,10 +855,7 @@
         <div class="school">Jain College of Engineering and Technology, Hubballi</div>
         <div class="prog">B.E. in Computer Science & Engineering — VTU</div>
       </div>
-      <div class="edu-right">
-        2018–2022<br>
-        7.37 CGPA
-      </div>
+      <div class="edu-right">2018–2022<br>7.37 CGPA</div>
     </div>
 
     <div class="edu">
@@ -1205,10 +863,7 @@
         <div class="school">Prerana PU College, Hubballi</div>
         <div class="prog">Intermediate — Karnataka State Board</div>
       </div>
-      <div class="edu-right">
-        2016–2018<br>
-        83.33%
-      </div>
+      <div class="edu-right">2016–2018<br>83.33%</div>
     </div>
 
     <div class="edu">
@@ -1255,79 +910,67 @@
 
 <!-- JAVASCRIPT -->
 <script>
-  /* PAGE BACKGROUND STARS */
-  var pageStars = document.getElementById('pageStars');
+/* PAGE BACKGROUND STARS */
+var pageStars = document.getElementById('pageStars');
 
-  for(var k=0;k<80;k++){
-    var ps = document.createElement('span');
+for(var k=0;k<80;k++){
+  var ps = document.createElement('span');
+  if(Math.random() > 0.85) ps.className = 'big';
+  ps.style.left = Math.random()*100 + '%';
+  ps.style.top = Math.random()*100 + '%';
+  ps.style.animationDelay = (Math.random()*3) + 's';
+  pageStars.appendChild(ps);
+}
 
-    if(Math.random() > 0.85)
-      ps.className = 'big';
+/* PAGE FIREFLIES */
+var pageFireflies = document.getElementById('pageFireflies');
 
-    ps.style.left = Math.random()*100 + '%';
-    ps.style.top = Math.random()*100 + '%';
-    ps.style.animationDelay = (Math.random()*3) + 's';
+for(var m=0;m<14;m++){
+  var pf = document.createElement('span');
+  pf.style.left = Math.random()*100 + '%';
+  pf.style.top = Math.random()*100 + '%';
+  pf.style.animationDelay = (Math.random()*4) + 's';
+  pf.style.animationDuration = (4 + Math.random()*3) + 's';
+  pageFireflies.appendChild(pf);
+}
 
-    pageStars.appendChild(ps);
-  }
+/* HERO STARS */
+var starField = document.getElementById('starField');
 
-  /* PAGE FIREFLIES */
-  var pageFireflies = document.getElementById('pageFireflies');
+for(var i=0;i<60;i++){
+  var s = document.createElement('span');
+  if(Math.random() > 0.85) s.className = 'big';
+  s.style.left = Math.random()*100 + '%';
+  s.style.top = Math.random()*70 + '%';
+  s.style.animationDelay = (Math.random()*3) + 's';
+  starField.appendChild(s);
+}
 
-  for(var m=0;m<14;m++){
-    var pf = document.createElement('span');
+/* HERO FIREFLIES */
+var fireflyField = document.getElementById('fireflyField');
 
-    pf.style.left = Math.random()*100 + '%';
-    pf.style.top = Math.random()*100 + '%';
-    pf.style.animationDelay = (Math.random()*4) + 's';
-    pf.style.animationDuration = (4 + Math.random()*3) + 's';
+for(var j=0;j<10;j++){
+  var f = document.createElement('span');
+  f.style.left = Math.random()*100 + '%';
+  f.style.top = (55 + Math.random()*35) + '%';
+  f.style.animationDelay = (Math.random()*4) + 's';
+  f.style.animationDuration = (4 + Math.random()*3) + 's';
+  fireflyField.appendChild(f);
+}
 
-    pageFireflies.appendChild(pf);
-  }
+/* MOBILE NAVIGATION */
+var toggle = document.getElementById('navToggle');
+var menu = document.getElementById('navMenu');
 
-  /* HERO STARS */
-  var starField = document.getElementById('starField');
+toggle.addEventListener('click',function(){
+  menu.classList.toggle('open');
+});
 
-  for(var i=0;i<60;i++){
-    var s = document.createElement('span');
-
-    if(Math.random() > 0.85)
-      s.className = 'big';
-
-    s.style.left = Math.random()*100 + '%';
-    s.style.top = Math.random()*70 + '%';
-    s.style.animationDelay = (Math.random()*3) + 's';
-
-    starField.appendChild(s);
-  }
-
-  /* HERO FIREFLIES */
-  var fireflyField = document.getElementById('fireflyField');
-
-  for(var j=0;j<10;j++){
-    var f = document.createElement('span');
-
-    f.style.left = Math.random()*100 + '%';
-    f.style.top = (55 + Math.random()*35) + '%';
-    f.style.animationDelay = (Math.random()*4) + 's';
-    f.style.animationDuration = (4 + Math.random()*3) + 's';
-
-    fireflyField.appendChild(f);
-  }
-
-  /* MOBILE NAVIGATION */
-  var toggle = document.getElementById('navToggle');
-  var menu = document.getElementById('navMenu');
-
-  toggle.addEventListener('click',function(){
-    menu.classList.toggle('open');
+menu.querySelectorAll('a').forEach(function(a){
+  a.addEventListener('click',function(){
+    menu.classList.remove('open');
   });
-
-  menu.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click',function(){
-      menu.classList.remove('open');
-    });
-  });
+});
 </script>
 
 </body>
