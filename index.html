@@ -33,7 +33,6 @@ body{
 h1,h2,h3{font-family:Arial,Helvetica,sans-serif;margin:0;color:var(--ink);}
 a{color:var(--ink);}
 
-/* BACKGROUND */
 .page-stars{
   position:fixed;inset:0;z-index:-2;
   background:linear-gradient(180deg,#030712 0%,#0F172A 55%,#14213D 100%);
@@ -53,7 +52,6 @@ a{color:var(--ink);}
   animation:drift 6s ease-in-out infinite;
 }
 
-/* NAVIGATION */
 nav{
   position:sticky;top:0;z-index:10;
   background:rgba(15,23,42,0.82);
@@ -77,11 +75,9 @@ nav a:hover{color:var(--amber);}
 }
 .nav-right{display:flex;align-items:center;}
 
-/* GENERAL LAYOUT */
 .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
 section{padding:56px 0;border-top:1px solid var(--line);}
 
-/* HERO */
 header.hero{
   padding:48px 0 80px;position:relative;overflow:hidden;
   background:
@@ -129,7 +125,6 @@ header.hero .wrap{position:relative;z-index:2;}
 .hero .btn-outline{border-color:rgba(244,247,250,0.4);color:#F4F7FA;}
 .hero .btn-outline:hover{border-color:#E9D98A;color:#E9D98A;}
 
-/* HERO STATS */
 .stat-card{
   flex:0 0 260px;width:260px;
   border:1px solid rgba(233,217,138,0.35);
@@ -143,7 +138,6 @@ header.hero .wrap{position:relative;z-index:2;}
 .stat-row .k{color:#B7C3CE;font-size:.78rem;}
 .stat-row .v{font-weight:600;color:#F4F7FA;line-height:1.4;}
 
-/* STARS AND FIREFLIES */
 .stars{position:absolute;inset:0;z-index:1;}
 .stars span{
   position:absolute;width:2px;height:2px;background:#fff;
@@ -159,7 +153,6 @@ header.hero .wrap{position:relative;z-index:2;}
   animation:drift 6s ease-in-out infinite;
 }
 
-/* ANIMATIONS */
 @keyframes twinkle{0%,100%{opacity:.25;}50%{opacity:1;}}
 @keyframes drift{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
 @keyframes wave{
@@ -172,7 +165,6 @@ header.hero .wrap{position:relative;z-index:2;}
   60%,100%{transform:rotate(0deg);}
 }
 
-/* TREE LINE */
 .treeline{
   position:absolute;left:0;right:0;bottom:0;height:120px;z-index:1;
   background:#08131E;
@@ -180,7 +172,6 @@ header.hero .wrap{position:relative;z-index:2;}
   opacity:.85;
 }
 
-/* SECTION HEADINGS */
 .section-head{display:flex;align-items:baseline;gap:14px;margin-bottom:30px;}
 .section-num{
   font-family:Arial,Helvetica,sans-serif;color:var(--amber);
@@ -188,10 +179,8 @@ header.hero .wrap{position:relative;z-index:2;}
 }
 .section-head h2{font-size:1.5rem;letter-spacing:-0.01em;}
 
-/* ABOUT */
 .about-text{max-width:100%;color:var(--ink-soft);font-size:1.02rem;text-align:justify;}
 
-/* SKILLS */
 .skills-group{margin-bottom:32px;}
 .skills-group:last-child{margin-bottom:0;}
 .skills-cat{
@@ -202,7 +191,6 @@ header.hero .wrap{position:relative;z-index:2;}
 .skills-badges{display:flex;flex-wrap:wrap;gap:10px;}
 .skills-badges img{height:28px;border-radius:4px;}
 
-/* CERTIFICATIONS */
 .cert-grid{
   display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;
   background:var(--line);border:1px solid var(--line);
@@ -219,7 +207,6 @@ header.hero .wrap{position:relative;z-index:2;}
 .cert .cert-link a{color:var(--amber);text-decoration:none;font-weight:600;}
 .cert .cert-link a:hover{text-decoration:underline;}
 
-/* EXPERIENCE */
 .job{
   display:flex;gap:24px;padding:18px 14px;
   border-bottom:1px solid var(--line);border-radius:8px;
@@ -231,14 +218,12 @@ header.hero .wrap{position:relative;z-index:2;}
 .job-role{font-weight:600;}
 .job-org{color:var(--ink-soft);font-size:.92rem;}
 
-/* NOTES */
 .note{
   background:transparent;border:1px solid rgba(99,102,241,0.35);
   padding:12px 16px;font-size:.88rem;color:#A5B4FC;
   margin-bottom:26px;text-align:justify;
 }
 
-/* PROJECT GRID */
 .proj-grid{
   display:grid;grid-template-columns:1fr 1fr;gap:1px;
   background:var(--line);border:1px solid var(--line);
@@ -253,7 +238,6 @@ header.hero .wrap{position:relative;z-index:2;}
 .proj p{color:var(--ink-soft);font-size:.92rem;margin-top:8px;text-align:justify;}
 .proj .stack{margin-top:12px;font-size:.8rem;color:var(--ink-soft);}
 
-/* PROJECT CARD GRID */
 .module-label{
   font-family:Arial,Helvetica,sans-serif;font-size:.82rem;
   color:var(--amber);font-weight:600;letter-spacing:.01em;margin-bottom:20px;
@@ -277,7 +261,6 @@ header.hero .wrap{position:relative;z-index:2;}
 .card .stack a{color:var(--amber);text-decoration:none;font-weight:600;}
 .card .stack a:hover{text-decoration:underline;}
 
-/* FEATURED PROJECTS (LEGACY, UNUSED) */
 .proj-featured{
   display:grid;grid-template-columns:1fr 1fr;gap:0;
   border:1px solid var(--line);background:var(--paper);
@@ -298,7 +281,6 @@ header.hero .wrap{position:relative;z-index:2;}
 }
 .proj-featured-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
 
-/* EDUCATION */
 .edu{
   display:flex;justify-content:space-between;gap:20px;
   padding:14px;border-bottom:1px solid var(--line);
@@ -311,7 +293,6 @@ header.hero .wrap{position:relative;z-index:2;}
 .edu-left .prog{color:var(--ink-soft);font-size:.92rem;}
 .edu-right{white-space:nowrap;color:var(--ink-soft);font-size:.9rem;text-align:right;}
 
-/* CONTACT */
 .contact-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);}
 .contact-list a{
   display:flex;justify-content:space-between;align-items:center;
@@ -324,22 +305,18 @@ header.hero .wrap{position:relative;z-index:2;}
 .contact-list .label{font-weight:600;color:var(--ink);}
 .contact-list .arrow{color:var(--amber);font-family:Arial,Helvetica,sans-serif;}
 
-/* FOOTER */
 footer{padding:30px 0 50px;color:var(--ink-soft);font-size:.85rem;}
 
-/* DESKTOP */
 @media(min-width:900px){
   .stat-card{position:absolute;top:-8px;right:0;}
   .hero-main{padding-right:290px;}
 }
 
-/* TABLET */
 @media(max-width:899px) and (min-width:641px){
   .cert-grid{grid-template-columns:1fr 1fr;}
   .card-grid{grid-template-columns:1fr 1fr;}
 }
 
-/* MOBILE */
 @media(max-width:640px){
   .hero-row{justify-content:center;text-align:center;}
   .hero-sub{margin-left:auto;margin-right:auto;text-align:justify;}
@@ -376,7 +353,6 @@ footer{padding:30px 0 50px;color:var(--ink-soft);font-size:.85rem;}
 <div class="page-stars" id="pageStars"></div>
 <div class="page-fireflies" id="pageFireflies"></div>
 
-<!-- NAVIGATION -->
 <nav>
   <div class="wrap">
     <div class="brand">Jeisa<span>.</span>Mathew</div>
@@ -395,7 +371,6 @@ footer{padding:30px 0 50px;color:var(--ink-soft);font-size:.85rem;}
   </div>
 </nav>
 
-<!-- HERO -->
 <header class="hero">
   <div class="stars" id="starField"></div>
   <div class="fireflies" id="fireflyField"></div>
@@ -452,7 +427,6 @@ footer{padding:30px 0 50px;color:var(--ink-soft);font-size:.85rem;}
   </div>
 </header>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="wrap">
     <div class="section-head">
@@ -467,7 +441,6 @@ footer{padding:30px 0 50px;color:var(--ink-soft);font-size:.85rem;}
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="wrap">
     <div class="section-head">
@@ -514,7 +487,6 @@ footer{padding:30px 0 50px;color:var(--ink-soft);font-size:.85rem;}
   </div>
 </section>
 
-<!-- CERTIFICATIONS -->
 <section id="certifications">
   <div class="wrap">
     <div class="section-head">
@@ -527,10 +499,9 @@ footer{padding:30px 0 50px;color:var(--ink-soft);font-size:.85rem;}
         <div class="cert-issuer">LeetCode</div>
         <h3>Pandas Badge</h3>
         <div class="cert-meta">Python · Issued Nov 2026</div>
-        <div class="cert-link"><a href="HackerRank%20-%20Python%20(Basic)_certificate.pdf" target="_blank">View certificate →</a></div>
+        <div class="cert-link"><a href="Pandas%20Badge%20-%20Leetcode.png" target="_blank">View certificate →</a></div>
       </div>
 
-    <div class="cert-grid">
       <div class="cert">
         <div class="cert-issuer">HackerRank</div>
         <h3>Python (Basic) Certificate</h3>
@@ -585,7 +556,6 @@ footer{padding:30px 0 50px;color:var(--ink-soft);font-size:.85rem;}
   </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section id="experience">
   <div class="wrap">
     <div class="section-head">
@@ -627,7 +597,6 @@ footer{padding:30px 0 50px;color:var(--ink-soft);font-size:.85rem;}
   </div>
 </section>
 
-<!-- DATA ANALYTICS PROJECTS -->
 <section id="projects">
   <div class="wrap">
     <div class="section-head">
@@ -713,7 +682,6 @@ footer{padding:30px 0 50px;color:var(--ink-soft);font-size:.85rem;}
         <div class="stack"><a href="https://github.com/JEISAMATHEW/PMFBY-Farmers-Insurance-SQL-Analysis" target="_blank">View on GitHub →</a></div>
       </div>
 
-      <!-- PROJECT 8: MYNTRA E-COMMERCE SQL ANALYSIS -->
       <div class="card">
         <a class="card-thumb"
            href="https://github.com/JEISAMATHEW/Myntra-Ecommerce-SQL-Analysis"
@@ -738,7 +706,6 @@ footer{padding:30px 0 50px;color:var(--ink-soft);font-size:.85rem;}
         </div>
       </div>
 
-      <!-- PROJECT 9: QUICKBITE FOOD DELIVERY SQL ANALYSIS -->
       <div class="card">
         <a class="card-thumb"
            href="https://github.com/JEISAMATHEW/QuickBite-Food-Delivery-SQL-Analysis"
@@ -767,7 +734,6 @@ footer{padding:30px 0 50px;color:var(--ink-soft);font-size:.85rem;}
   </div>
 </section>
 
-<!-- AI & DATA SCIENCE INTERNSHIP PROJECTS -->
 <section id="internship-projects">
   <div class="wrap">
     <div class="section-head">
@@ -818,7 +784,6 @@ footer{padding:30px 0 50px;color:var(--ink-soft);font-size:.85rem;}
   </div>
 </section>
 
-<!-- ACADEMIC PROJECTS -->
 <section id="academic-projects">
   <div class="wrap">
     <div class="section-head">
@@ -876,7 +841,6 @@ footer{padding:30px 0 50px;color:var(--ink-soft);font-size:.85rem;}
   </div>
 </section>
 
-<!-- EDUCATION -->
 <section id="education">
   <div class="wrap">
     <div class="section-head">
@@ -910,7 +874,6 @@ footer{padding:30px 0 50px;color:var(--ink-soft);font-size:.85rem;}
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="wrap">
     <div class="section-head">
@@ -942,9 +905,7 @@ footer{padding:30px 0 50px;color:var(--ink-soft);font-size:.85rem;}
   </div>
 </section>
 
-<!-- JAVASCRIPT -->
 <script>
-/* PAGE BACKGROUND STARS */
 var pageStars = document.getElementById('pageStars');
 
 for(var k=0;k<80;k++){
@@ -956,7 +917,6 @@ for(var k=0;k<80;k++){
   pageStars.appendChild(ps);
 }
 
-/* PAGE FIREFLIES */
 var pageFireflies = document.getElementById('pageFireflies');
 
 for(var m=0;m<14;m++){
@@ -968,7 +928,6 @@ for(var m=0;m<14;m++){
   pageFireflies.appendChild(pf);
 }
 
-/* HERO STARS */
 var starField = document.getElementById('starField');
 
 for(var i=0;i<60;i++){
@@ -980,7 +939,6 @@ for(var i=0;i<60;i++){
   starField.appendChild(s);
 }
 
-/* HERO FIREFLIES */
 var fireflyField = document.getElementById('fireflyField');
 
 for(var j=0;j<10;j++){
@@ -992,7 +950,6 @@ for(var j=0;j<10;j++){
   fireflyField.appendChild(f);
 }
 
-/* MOBILE NAVIGATION */
 var toggle = document.getElementById('navToggle');
 var menu = document.getElementById('navMenu');
 
